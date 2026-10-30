@@ -167,6 +167,22 @@ function Facts({
   );
 }
 
+function FieldPhoto({ name, alt, width, height, priority = false }: {
+  name: "cocoa-pod" | "field-cocoa" | "field-visit";
+  alt: string; width: number; height: number; priority?: boolean;
+}) {
+  return (
+    <picture>
+      <source type="image/webp"
+        srcSet={[480, 800, 1280].map(size => `/images/${name}-${size}.webp ${size}w`).join(", ")}
+        sizes="(max-width: 800px) calc(100vw - 40px), (max-width: 1200px) 44vw, 620px" />
+      <img src={`/images/${name}.jpg`} alt={alt} width={width} height={height}
+        loading={priority ? "eager" : "lazy"} decoding="async"
+        fetchPriority={priority ? "high" : "auto"} />
+    </picture>
+  );
+}
+
 function Home({ locale }: { locale: Locale }) {
   const t = copy[locale];
   return (
@@ -198,13 +214,7 @@ function Home({ locale }: { locale: Locale }) {
           </div>
         </div>
         <figure className="hero-photograph">
-          <img
-            src="/images/cocoa-pod.jpg"
-            alt={t.cocoaPodsAlt}
-            width="1800"
-            height="1125"
-            fetchPriority="high"
-          />
+          <FieldPhoto name="cocoa-pod" alt={t.cocoaPodsAlt} width={1800} height={1125} priority />
           <figcaption>
             <span>{t.homeImageLabel}</span>
             <p>{t.fieldCaption}</p>
@@ -371,12 +381,7 @@ function Cocoa({ locale }: { locale: Locale }) {
           <p className="confirmation-note">{t.supplyCaution}</p>
         </div>
         <figure className="supply-image">
-          <img
-            src="/images/field-cocoa.jpg"
-            alt={t.fieldAlt}
-            width="1800"
-            height="1125"
-          />
+          <FieldPhoto name="field-cocoa" alt={t.fieldAlt} width={1800} height={1125} />
           <figcaption>
             {t.fieldCaption}
             <small>{t.fieldCaution}</small>
@@ -414,13 +419,7 @@ function Cocoa({ locale }: { locale: Locale }) {
           <p className="review-note">{t.fieldCaution}</p>
         </div>
         <figure>
-          <img
-            src="/images/field-visit.jpg"
-            alt={t.fieldVisitAlt}
-            width="1500"
-            height="844"
-            loading="lazy"
-          />
+          <FieldPhoto name="field-visit" alt={t.fieldVisitAlt} width={1500} height={844} />
           <figcaption>{t.fieldCaption}</figcaption>
         </figure>
       </section>

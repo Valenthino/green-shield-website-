@@ -2341,3 +2341,5 @@ h2,
 .business-phones > div { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 20px; }
 .business-phones span { font-size: 12px; color: #66705d; }
 .business-phones a { font-size: 18px; white-space: nowrap; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+
+.hero-photograph picture, .supply-image picture, .field-story picture { display: block; }

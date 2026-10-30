@@ -11,6 +11,12 @@ for(const route of routes){
  assert.match(html,new RegExp(`<html[^>]*lang="${language}"`),`Wrong language: ${route}`);
  assert.equal((html.match(/<h1[\s>]/g)||[]).length,1,`Expected one h1: ${route}`);
  assert.match(html,/<meta name="robots" content="noindex, nofollow"\/>/,`Missing draft robots policy: ${route}`);
+ for(const [,set] of html.matchAll(/src[Ss]et="([^"]+)"/g)){
+   for(const candidate of set.split(',')){
+     const url=candidate.trim().split(/\s+/)[0];
+     if(url.startsWith('/images/'))assert.ok(existsSync(resolve(root,'.'+url)),`Missing responsive image: ${route} -> ${url}`);
+   }
+ }
  for(const [,value] of html.matchAll(/(?:href|src)="(\/[^"#?]*)(?:[^"\s]*)"/g)){
    if(value.startsWith('//')) throw new Error(`Unexpected external resource: ${value}`);
    const target=resolve(root,'.'+value);
