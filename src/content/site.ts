@@ -165,7 +165,7 @@ export const copy = {
     contactEyebrow: "CONTACT",
     contactTitle: "A simple email\nis a good start.",
     contactLead:
-      "Reply to the email you received, or use the confirmed business contact details that will appear here.",
+      "Use the business phone numbers below, or reply to the email you received.",
     directEmail: "DIRECT EMAIL",
     emailPlaceholder: "[Business email address]",
     emailHelp:
@@ -372,7 +372,7 @@ export const copy = {
     contactEyebrow: "CONTACT",
     contactTitle: "Un simple e-mail\npour commencer.",
     contactLead:
-      "Répondez à l’e-mail que vous avez reçu, ou utilisez les coordonnées professionnelles confirmées qui figureront ici.",
+      "Utilisez les numéros professionnels ci-dessous, ou répondez à l’e-mail que vous avez reçu.",
     directEmail: "E-MAIL DIRECT",
     emailPlaceholder: "[Adresse e-mail professionnelle]",
     emailHelp:

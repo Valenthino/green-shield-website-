@@ -7,6 +7,7 @@ for(const route of routes){
  const file=resolve(root,'.'+route,'index.html');
  assert.ok(existsSync(file),`Missing route: ${route}`);
  const html=readFileSync(file,'utf8');
+ assert.doesNotMatch(html, /<title>[^<]*(?:private|privé)/i, `Misleading private title: ${route}`);
  const language=route.startsWith('/fr/')?'fr':'en';
  assert.match(html,new RegExp(`<html[^>]*lang="${language}"`),`Wrong language: ${route}`);
  assert.equal((html.match(/<h1[\s>]/g)||[]).length,1,`Expected one h1: ${route}`);

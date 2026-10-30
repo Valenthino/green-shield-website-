@@ -5,11 +5,11 @@ import "../globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Green Shield | Cocoa trading — private draft",
+    default: "Green Shield | Cocoa trading — website preview",
     template: "%s | Green Shield",
   },
   description:
-    "Green Shield — cocoa trading / négoce de cacao. Private design draft / maquette privée.",
+    "Green Shield — cocoa trading / négoce de cacao. Website preview / aperçu du site.",
   robots: { index: false, follow: false },
   icons: { icon: "/icon.svg" },
 };
