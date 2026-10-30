@@ -3,11 +3,11 @@ import "../globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Green Shield | Coffee, cocoa & cashew trading — website preview",
+    default: "Green Shield | Coffee, cocoa & cashew trading",
     template: "%s | Green Shield",
   },
   description:
-    "Green Shield: a coffee, cocoa and cashew trading business introduction. Website preview.",
+    "Green Shield: a coffee, cocoa and cashew trading business introduction. A personal approach to agricultural trade in West Africa.",
   robots: { index: false, follow: false },
   icons: { icon: "/icon.svg" },
 };

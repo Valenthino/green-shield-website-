@@ -11,3 +11,5 @@ Real user-supplied images, authorized for this website preview. No AI or stock i
 The second photo collection was explicitly identified by the user as cashew operations, not cocoa. Captions identify earlier visits in Côte d’Ivoire. They do not identify subjects as the founder, imply current Liberia stock or facilities, or prove ownership, volume, certification or legal export readiness. Original source-folder locations are deliberately omitted.
 
 Every photo has responsive 480px, 800px and 1280px WebP variants, with JPEG compatibility fallbacks. Embedded metadata is removed from web copies; only size/compression changes were made, with original full-resolution photographs preserved outside the repository. The people-focused homepage photo is prioritized; other photos load lazily. Historical cocoa family experience and cocoa supplier relationships are not generalized to other commodities.
+
+The October 30 redesign reuses only these five previously approved photographs. The separately supplied headshot is not included. A wide image area on About supports a future approved video without implying that a video is already available.

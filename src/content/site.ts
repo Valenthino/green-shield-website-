@@ -190,7 +190,7 @@ export const copy = {
     copySuccess: "Copied. Paste into your email and fill in your requirements.",
     copyFailure: "Copying is unavailable. Select and copy the template below.",
     viewTemplate: "View the enquiry template",
-    enquiry: `Hello Valentin,\n\nI’m getting in touch about a possible coffee, cocoa or cashew requirement.\n\nCompany:\nProduct / grade:\nPreferred origin:\nRequired specifications:\nIndicative quantity:\nShipment timing:\nDestination:\nProposed delivery terms:\nRequired documents:\n\nPlease let me know whether this is something we can discuss.\n\nKind regards,\n[Your name]`,
+    enquiry: `Hello Valentin,\n\nI’m getting in touch about a possible coffee, cocoa or cashew requirement.\n\nCompany:\nProduct / grade:\nPreferred origin:\nRequired specifications:\nIndicative quantity:\nShipment timing:\nDestination:\nProposed delivery terms:\nRequired documents:\n\nPlease let me know whether this is something we can discuss.\n\nKind regards,\nYour name`,
     contactAsideTitle: "A few details are enough.",
     contactAside:
       "Share an outline of what you need. This site does not collect enquiries or ask you to upload commercial documents.",
@@ -413,7 +413,7 @@ export const copy = {
     copyFailure:
       "La copie automatique est indisponible. Sélectionnez et copiez le modèle ci-dessous.",
     viewTemplate: "Voir le modèle de demande",
-    enquiry: `Bonjour Valentin,\n\nJe vous contacte au sujet d’un éventuel besoin en café, cacao ou anacarde.\n\nEntreprise :\nProduit / qualité :\nOrigine souhaitée :\nSpécifications requises :\nQuantité indicative :\nPériode d’expédition :\nDestination :\nConditions de livraison envisagées :\nDocuments nécessaires :\n\nMerci de me préciser si ce besoin peut faire l’objet d’un échange.\n\nCordialement,\n[Votre nom]`,
+    enquiry: `Bonjour Valentin,\n\nJe vous contacte au sujet d’un éventuel besoin en café, cacao ou anacarde.\n\nEntreprise :\nProduit / qualité :\nOrigine souhaitée :\nSpécifications requises :\nQuantité indicative :\nPériode d’expédition :\nDestination :\nConditions de livraison envisagées :\nDocuments nécessaires :\n\nMerci de me préciser si ce besoin peut faire l’objet d’un échange.\n\nCordialement,\nVotre nom`,
     contactAsideTitle: "Quelques informations suffisent.",
     contactAside:
       "Présentez les grandes lignes de votre besoin. Ce site ne collecte pas de demandes et ne vous invite pas à téléverser de documents commerciaux.",
