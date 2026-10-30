@@ -95,8 +95,8 @@ function Header({ locale, page }: { locale: Locale; page: Page }) {
               <span className="nav-mobile">
                 {item === "cocoa"
                   ? locale === "fr"
-                    ? "Cacao"
-                    : "Cocoa"
+                    ? "Produits"
+                    : "Products"
                   : t.nav[item]}
               </span>
             </a>
@@ -168,7 +168,7 @@ function Facts({
 }
 
 function FieldPhoto({ name, alt, width, height, priority = false }: {
-  name: "cocoa-pod" | "field-cocoa" | "field-visit";
+  name: "cocoa-pod" | "field-cocoa" | "field-visit" | "cashew-warehouse" | "cashew-yard";
   alt: string; width: number; height: number; priority?: boolean;
 }) {
   return (
@@ -214,7 +214,7 @@ function Home({ locale }: { locale: Locale }) {
           </div>
         </div>
         <figure className="hero-photograph">
-          <FieldPhoto name="cocoa-pod" alt={t.cocoaPodsAlt} width={1800} height={1125} priority />
+          <FieldPhoto name="field-visit" alt={t.fieldVisitAlt} width={1500} height={844} priority />
           <figcaption>
             <span>{t.homeImageLabel}</span>
             <p>{t.fieldCaption}</p>
@@ -379,6 +379,11 @@ function Cocoa({ locale }: { locale: Locale }) {
           <p>{t.supplyIntro}</p>
           <Facts locale={locale} kind="supply" />
           <p className="confirmation-note">{t.supplyCaution}</p>
+          <aside className="shipment-options">
+            <h3>{t.shippingTitle}</h3>
+            <dl>{t.shippingLocations.map(location => <div key={location.country}><dt>{location.country}</dt><dd>{location.port}</dd></div>)}</dl>
+            <p>{t.shippingNote}</p>
+          </aside>
         </div>
         <figure className="supply-image">
           <FieldPhoto name="field-cocoa" alt={t.fieldAlt} width={1800} height={1125} />
@@ -423,8 +428,21 @@ function Cocoa({ locale }: { locale: Locale }) {
           <figcaption>{t.fieldCaption}</figcaption>
         </figure>
       </section>
+      <OperationsGallery locale={locale} />
     </>
   );
+}
+
+function OperationsGallery({ locale }: { locale: Locale }) {
+  const t = copy[locale];
+  return <section className="operations-section wrap">
+    <div className="operations-intro"><p className="eyebrow">CÔTE D’IVOIRE / {locale === "fr" ? "ANACARDE" : "CASHEW"}</p><h2>{t.operationsTitle}</h2><p>{t.operationsIntro}</p></div>
+    <div className="operations-gallery">
+      <figure><FieldPhoto name="cashew-warehouse" alt={t.warehouseAlt} width={1280} height={853} /><figcaption>{t.warehouseCaption}</figcaption></figure>
+      <figure><FieldPhoto name="cashew-yard" alt={t.yardAlt} width={1280} height={853} /><figcaption>{t.yardCaption}</figcaption></figure>
+    </div>
+    <p className="review-note">{t.operationsCaution}</p>
+  </section>;
 }
 
 function Contact({ locale }: { locale: Locale }) {

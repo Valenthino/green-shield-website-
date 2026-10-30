@@ -27,3 +27,18 @@ for(const route of routes){
  }
 }
 console.log(`Export checks passed: ${routes.length} routes, language tags, h1 headings, noindex and local links/assets.`);
+
+for(const language of ['en','fr']){
+ const home=readFileSync(resolve(root,language,'index.html'),'utf8');
+ const products=readFileSync(resolve(root,language,'cocoa/index.html'),'utf8');
+ assert.match(home,/field-visit-480.webp/, 'People-focused hero required');
+ assert.doesNotMatch(home,/src="\/images\/cocoa-pod.jpg"/, 'Pod-only hero must not return');
+ assert.match(home,language==='fr'?/CAFÉ · CACAO · ANACARDE/:/COFFEE · COCOA · CASHEW/);
+ assert.match(products,/cashew-warehouse-800.webp/);
+ assert.match(products,/cashew-yard-800.webp/);
+ assert.match(products,/Monrovia/); assert.match(products,/Lomé/);
+ assert.match(products,language==='fr'?/Les conditions commerciales sont fixées dans le devis/:/Trade terms are agreed in the quotation/);
+ assert.match(products,language==='fr'?/Photographies d’archives/:/Historical photographs/);
+ assert.doesNotMatch(products,/\bFOB\b/,'Unconfirmed trade term must not be asserted');
+}
+console.log('Scope checks passed: human cocoa hero, three commodities, historical cashew gallery and qualified shipment locations.');

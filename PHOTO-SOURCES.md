@@ -2,10 +2,12 @@
 
 Real user-supplied images, authorized for this website preview. No AI or stock imagery.
 
-- public/images/cocoa-pod.jpg: cocoa pod on tree, homepage.
-- public/images/field-cocoa.jpg: person handling a cocoa pod, Cocoa & Sourcing.
-- public/images/field-visit.jpg: person examining a cocoa pod during a field visit.
+- public/images/cocoa-pod.jpg: cocoa pod on tree; preserved asset.
+- public/images/field-cocoa.jpg: person handling a cocoa pod, Products & Sourcing.
+- public/images/field-visit.jpg: person holding cocoa pods; homepage hero and field story.
+- public/images/cashew-warehouse.jpg: container-handling lift beside a warehouse, from historical Côte d’Ivoire cashew operations (source photograph Warehouse 79).
+- public/images/cashew-yard.jpg: cashew nuts, sacks and workers in an outdoor operations yard in Côte d’Ivoire (source photograph Warehouse 77).
 
-Captions identify earlier visits in Côte d’Ivoire. They do not identify subjects as the founder, imply current Liberia stock, or prove ownership, volume, certification or legal export readiness. Web copies are resized/compressed, with embedded metadata removed; scenes unaltered. Private original source-folder locations are deliberately omitted.
+The second photo collection was explicitly identified by the user as cashew operations, not cocoa. Captions identify earlier visits in Côte d’Ivoire. They do not identify subjects as the founder, imply current Liberia stock or facilities, or prove ownership, volume, certification or legal export readiness. Original source-folder locations are deliberately omitted.
 
-For faster delivery, each photo also has 480px, 800px and 1280px WebP variants. Picture/srcset selects the appropriate size. Original JPEG web copies remain as compatibility fallbacks. The homepage image is prioritized; below-fold field images load lazily. Only size/compression changes were made.
+Every photo has responsive 480px, 800px and 1280px WebP variants, with JPEG compatibility fallbacks. Embedded metadata is removed from web copies; only size/compression changes were made, with original full-resolution photographs preserved outside the repository. The people-focused homepage photo is prioritized; other photos load lazily. Historical cocoa family experience and cocoa supplier relationships are not generalized to other commodities.

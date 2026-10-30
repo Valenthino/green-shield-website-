@@ -17,8 +17,8 @@ export async function generateMetadata({
     title: {
       absolute:
         locale === "fr"
-          ? "Green Shield | Négoce de cacao"
-          : "Green Shield | Cocoa trading",
+          ? "Green Shield | Café, cacao et anacarde"
+          : "Green Shield | Coffee, cocoa & cashew trading",
     },
   };
 }

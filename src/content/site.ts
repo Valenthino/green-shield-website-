@@ -32,11 +32,11 @@ export const copy = {
   en: {
     locale: "English",
     language: "Language",
-    cocoaTrading: "COCOA TRADING",
+    cocoaTrading: "COFFEE · COCOA · CASHEW",
     nav: {
       home: "Home",
       about: "About",
-      cocoa: "Cocoa & sourcing",
+      cocoa: "Products & sourcing",
       contact: "Contact",
     },
     draft: "Website preview",
@@ -46,10 +46,10 @@ export const copy = {
     readAbout: "About Green Shield",
     seeCocoa: "Discuss your requirements",
     homeEyebrow: "GREEN SHIELD / A PERSONAL INTRODUCTION",
-    homeTitle: "Let’s talk cocoa.",
+    homeTitle: "Let’s talk trade.",
     homeTitleEm: "Person to person.",
     homeLead:
-      "A straightforward conversation about your cocoa requirements starts with knowing who you’re speaking to.",
+      "A straightforward conversation about your coffee, cocoa or cashew requirements starts with knowing who you’re speaking to.",
     homeNote:
       "If you arrived here from my email, welcome. Here’s a little more about the person and business behind it.",
     homeImageLabel: "COCOA / CÔTE D’IVOIRE",
@@ -73,7 +73,7 @@ export const copy = {
         page: "about",
       },
       {
-        title: "Talk through a cocoa requirement",
+        title: "Discuss your product requirements",
         text: "Product, origin, volume and delivery details.",
         page: "cocoa",
       },
@@ -95,7 +95,7 @@ export const copy = {
       "Before we discuss a possible trade, I’d like you to have a clear picture of who I am and what the business can offer.",
     bioPlaceholder:
       "Add a short factual introduction: your background, where you are based, your exact role and why you started Green Shield.",
-    familyTitle: "A family history in business.",
+    familyTitle: "A family background in cocoa.",
     familyText:
       "My family has been involved in the cocoa trade for more than 30 years. My father’s business has focused on local trading. Green Shield is a separate venture, building on that background.",
     familyNote:
@@ -128,22 +128,36 @@ export const copy = {
       location: "[City, country]",
       registration: "[Number and official registry link]",
       role: "[Confirm: trader, broker or exporter]",
-      product: "[Confirm product and grade]",
-      origins: "[Verified origin or origins]",
+      product: "Coffee, cocoa or cashew — form and grade to agree",
+      origins: "Confirmed for each product and quotation",
       capacity: "[Confirm actual supply capacity]",
       documents: "[Verified documents available]",
     },
     companyCaution:
       "Registration and operating details remain to be confirmed. A planned registration is not presented as completed.",
-    cocoaEyebrow: "COCOA & SOURCING",
+    cocoaEyebrow: "PRODUCTS & SOURCING",
     cocoaTitle: "Start with\nyour requirements.",
     cocoaLead:
       "Product and origin are only the start. A useful discussion also needs specifications, quantities, delivery terms and the right documents.",
-    supplyTitle: "The supply details",
+    supplyTitle: "Coffee, cocoa and cashew.",
     supplyIntro:
-      "Green Shield is developing its operations in Liberia with supplier relationships already in place. Some of those relationships began in Côte d’Ivoire. Specific lots, volumes, quality and export arrangements still need to be confirmed for each enquiry.",
+      "Green Shield focuses on coffee, cocoa and cashew trading. Form, grade, origin, availability and documents are confirmed for each enquiry. Cocoa supplier relationships support our developing operations in Liberia; some began in Côte d’Ivoire.",
     supplyCaution:
       "Draft placeholders, not supply or certification claims. Availability and terms must be confirmed for each enquiry.",
+    shippingTitle: "Shipment discussions",
+    shippingLocations: [
+      { country: "Côte d’Ivoire", port: "Port to be agreed" },
+      { country: "Liberia", port: "Monrovia" },
+      { country: "Togo", port: "Lomé" },
+    ],
+    shippingNote: "Product, origin, availability and loading point are confirmed case by case. Not every product is available from every location. Trade terms are agreed in the quotation.",
+    operationsTitle: "Cashew, beyond the field.",
+    operationsIntro: "Earlier visits to cashew warehousing and handling operations in Côte d’Ivoire.",
+    operationsCaution: "Historical photographs, not a claim of facility ownership, current stock or operations in Liberia.",
+    warehouseAlt: "A raised container-handling lift beside a warehouse during an earlier visit to cashew operations in Côte d’Ivoire.",
+    warehouseCaption: "Cashew warehousing and handling · Côte d’Ivoire, earlier visit.",
+    yardAlt: "Cashew nuts spread across an operations yard, with workers and warehouse buildings, during an earlier visit in Côte d’Ivoire.",
+    yardCaption: "Cashew operations in an outdoor yard · Côte d’Ivoire, earlier visit.",
     requirementsTitle: "A useful first conversation",
     requirements: [
       {
@@ -176,7 +190,7 @@ export const copy = {
     copySuccess: "Copied. Paste into your email and fill in your requirements.",
     copyFailure: "Copying is unavailable. Select and copy the template below.",
     viewTemplate: "View the enquiry template",
-    enquiry: `Hello [Founder name],\n\nI’m getting in touch about a possible cocoa requirement.\n\nCompany:\nProduct / grade:\nPreferred origin:\nRequired specifications:\nIndicative quantity:\nShipment timing:\nDestination:\nProposed delivery terms:\nRequired documents:\n\nPlease let me know whether this is something we can discuss.\n\nKind regards,\n[Your name]`,
+    enquiry: `Hello Valentin,\n\nI’m getting in touch about a possible coffee, cocoa or cashew requirement.\n\nCompany:\nProduct / grade:\nPreferred origin:\nRequired specifications:\nIndicative quantity:\nShipment timing:\nDestination:\nProposed delivery terms:\nRequired documents:\n\nPlease let me know whether this is something we can discuss.\n\nKind regards,\n[Your name]`,
     contactAsideTitle: "A few details are enough.",
     contactAside:
       "Share an outline of what you need. This site does not collect enquiries or ask you to upload commercial documents.",
@@ -228,7 +242,7 @@ export const copy = {
       },
       {
         title: "Invite a conversation.",
-        text: "Ask buyers to reply with their cocoa requirements.",
+        text: "Ask buyers to reply with their coffee, cocoa or cashew requirements.",
       },
     ],
     videoTip:
@@ -237,11 +251,11 @@ export const copy = {
   fr: {
     locale: "Français",
     language: "Langue",
-    cocoaTrading: "NÉGOCE DE CACAO",
+    cocoaTrading: "CAFÉ · CACAO · ANACARDE",
     nav: {
       home: "Accueil",
       about: "À propos",
-      cocoa: "Cacao & approvisionnement",
+      cocoa: "Produits & approvisionnement",
       contact: "Contact",
     },
     draft: "Aperçu du site",
@@ -251,10 +265,10 @@ export const copy = {
     readAbout: "À propos de Green Shield",
     seeCocoa: "Parlons de votre besoin",
     homeEyebrow: "GREEN SHIELD / FAISONS CONNAISSANCE",
-    homeTitle: "Parlons cacao.",
+    homeTitle: "Parlons négoce.",
     homeTitleEm: "En toute simplicité.",
     homeLead:
-      "Pour échanger sur vos besoins en cacao, il est utile de savoir à qui vous vous adressez.",
+      "Pour échanger sur vos besoins en café, cacao ou anacarde, il est utile de savoir à qui vous vous adressez.",
     homeNote:
       "Vous avez reçu mon e-mail ? Bienvenue. Voici quelques informations sur la personne et l’entreprise qui vous ont contacté.",
     homeImageLabel: "CACAO / CÔTE D’IVOIRE",
@@ -279,7 +293,7 @@ export const copy = {
         page: "about",
       },
       {
-        title: "Préciser votre besoin en cacao",
+        title: "Préciser votre besoin",
         text: "Produit, origine, volumes et conditions de livraison.",
         page: "cocoa",
       },
@@ -301,7 +315,7 @@ export const copy = {
       "Avant de discuter d’une éventuelle transaction, je souhaite vous donner une vision claire de mon parcours et de ce que l’entreprise peut proposer.",
     bioPlaceholder:
       "Ajouter une courte présentation factuelle : votre parcours, votre lieu d’activité, votre rôle exact et les raisons de la création de Green Shield.",
-    familyTitle: "Une histoire familiale dans le commerce.",
+    familyTitle: "Une histoire familiale dans le cacao.",
     familyText:
       "Ma famille est présente dans le commerce du cacao depuis plus de 30 ans. L’activité de mon père s’est concentrée sur le négoce local. Green Shield est une entreprise distincte, qui s’appuie sur ce parcours.",
     familyNote:
@@ -335,22 +349,36 @@ export const copy = {
       location: "[Ville, pays]",
       registration: "[Numéro et lien vers le registre officiel]",
       role: "[À confirmer : négociant, courtier ou exportateur]",
-      product: "[Produit et qualité à confirmer]",
-      origins: "[Origine(s) vérifiée(s)]",
+      product: "Café, cacao ou anacarde — forme et qualité à convenir",
+      origins: "À confirmer par produit et par devis",
       capacity: "[Capacité réelle à confirmer]",
       documents: "[Documents disponibles vérifiés]",
     },
     companyCaution:
       "Les informations d’immatriculation et d’activité restent à confirmer. Une immatriculation prévue n’est pas présentée comme acquise.",
-    cocoaEyebrow: "CACAO & APPROVISIONNEMENT",
+    cocoaEyebrow: "PRODUITS & APPROVISIONNEMENT",
     cocoaTitle: "Commençons par\nvotre besoin.",
     cocoaLead:
       "Le produit et l’origine ne suffisent pas. Un échange utile précise aussi les spécifications, les quantités, les conditions de livraison et les documents nécessaires.",
-    supplyTitle: "Les informations d’approvisionnement",
+    supplyTitle: "Café, cacao et anacarde.",
     supplyIntro:
-      "Green Shield développe ses activités au Liberia avec des relations fournisseurs déjà établies, dont certaines sont nées en Côte d’Ivoire. Les lots, volumes, qualités et modalités d’exportation restent à confirmer pour chaque demande.",
+      "Green Shield se consacre au négoce de café, cacao et anacarde. La forme, la qualité, l’origine, la disponibilité et les documents sont confirmés pour chaque demande. Des relations fournisseurs dans le cacao accompagnent le développement au Liberia ; certaines sont nées en Côte d’Ivoire.",
     supplyCaution:
       "Champs provisoires, sans déclaration de capacité ni de certification. La disponibilité et les conditions doivent être confirmées pour chaque demande.",
+    shippingTitle: "Possibilités d’expédition à discuter",
+    shippingLocations: [
+      { country: "Côte d’Ivoire", port: "Port à convenir" },
+      { country: "Liberia", port: "Monrovia" },
+      { country: "Togo", port: "Lomé" },
+    ],
+    shippingNote: "Le produit, l’origine, la disponibilité et le point de chargement sont confirmés au cas par cas. Chaque produit n’est pas nécessairement disponible depuis chaque lieu. Les conditions commerciales sont fixées dans le devis.",
+    operationsTitle: "L’anacarde, au-delà des plantations.",
+    operationsIntro: "De précédentes visites d’opérations de stockage et de manutention d’anacarde en Côte d’Ivoire.",
+    operationsCaution: "Photographies d’archives, sans déclaration de propriété des installations, de stock actuel ou d’activité au Liberia.",
+    warehouseAlt: "Un engin de manutention de conteneurs devant un entrepôt lors d’une précédente visite d’opérations sur l’anacarde en Côte d’Ivoire.",
+    warehouseCaption: "Stockage et manutention d’anacarde · précédente visite en Côte d’Ivoire.",
+    yardAlt: "Des noix de cajou étalées dans une cour, avec des travailleurs et des bâtiments de stockage, lors d’une précédente visite en Côte d’Ivoire.",
+    yardCaption: "Opérations sur l’anacarde en extérieur · précédente visite en Côte d’Ivoire.",
     requirementsTitle: "Un premier échange utile",
     requirements: [
       {
@@ -385,7 +413,7 @@ export const copy = {
     copyFailure:
       "La copie automatique est indisponible. Sélectionnez et copiez le modèle ci-dessous.",
     viewTemplate: "Voir le modèle de demande",
-    enquiry: `Bonjour [Nom du fondateur],\n\nJe vous contacte au sujet d’un éventuel besoin en cacao.\n\nEntreprise :\nProduit / qualité :\nOrigine souhaitée :\nSpécifications requises :\nQuantité indicative :\nPériode d’expédition :\nDestination :\nConditions de livraison envisagées :\nDocuments nécessaires :\n\nMerci de me préciser si ce besoin peut faire l’objet d’un échange.\n\nCordialement,\n[Votre nom]`,
+    enquiry: `Bonjour Valentin,\n\nJe vous contacte au sujet d’un éventuel besoin en café, cacao ou anacarde.\n\nEntreprise :\nProduit / qualité :\nOrigine souhaitée :\nSpécifications requises :\nQuantité indicative :\nPériode d’expédition :\nDestination :\nConditions de livraison envisagées :\nDocuments nécessaires :\n\nMerci de me préciser si ce besoin peut faire l’objet d’un échange.\n\nCordialement,\n[Votre nom]`,
     contactAsideTitle: "Quelques informations suffisent.",
     contactAside:
       "Présentez les grandes lignes de votre besoin. Ce site ne collecte pas de demandes et ne vous invite pas à téléverser de documents commerciaux.",
@@ -437,7 +465,7 @@ export const copy = {
       },
       {
         title: "Proposez un échange.",
-        text: "Invitez les acheteurs à répondre avec leurs besoins en cacao.",
+        text: "Invitez les acheteurs à préciser leurs besoins en café, cacao ou anacarde.",
       },
     ],
     videoTip:

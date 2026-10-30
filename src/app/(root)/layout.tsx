@@ -3,11 +3,11 @@ import "../globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Green Shield | Cocoa trading — website preview",
+    default: "Green Shield | Coffee, cocoa & cashew trading — website preview",
     template: "%s | Green Shield",
   },
   description:
-    "Green Shield: a cocoa trading business introduction. Website preview.",
+    "Green Shield: a coffee, cocoa and cashew trading business introduction. Website preview.",
   robots: { index: false, follow: false },
   icons: { icon: "/icon.svg" },
 };
