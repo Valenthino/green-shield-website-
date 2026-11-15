@@ -5,7 +5,7 @@ import { copy, href, type Locale, type Page } from "@/content/site";
 
 import { languageDecision } from "@/lib/language";
 
-const preferenceKey = "green-shield-language";
+const preferenceKey = "baoore-language";
 function rememberLanguage(locale: Locale) {
   try {
     localStorage.setItem(preferenceKey, locale);

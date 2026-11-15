@@ -8,7 +8,7 @@ export function href(locale: Locale, page: Page = "home") {
 
 // Keep unknown commercial facts null. A value here is displayed as a claim.
 export const business = {
-  brand: "Green Shield",
+  brand: "BAOORE AgriTrade",
   founder: "Valentin Sawadogo" as string | null,
   email: null as string | null,
   founderBase: "Vancouver, Canada",
@@ -43,9 +43,9 @@ export const copy = {
     draftNotes: "Draft notes",
     skip: "Skip to content",
     getInTouch: "Get in touch",
-    readAbout: "About Green Shield",
+    readAbout: "About BAOORE AgriTrade",
     seeCocoa: "Discuss your requirements",
-    homeEyebrow: "GREEN SHIELD / A PERSONAL INTRODUCTION",
+    homeEyebrow: "BAOORE AGRITRADE / A PERSONAL INTRODUCTION",
     homeTitle: "Let’s talk trade.",
     homeTitleEm: "Person to person.",
     homeLead:
@@ -83,28 +83,28 @@ export const copy = {
         page: "contact",
       },
     ],
-    aboutEyebrow: "ABOUT GREEN SHIELD",
+    aboutEyebrow: "ABOUT BAOORE AGRITRADE",
     aboutTitle: "A proper introduction.",
     aboutLead:
       "A family background in the trade, and a new business conversation.",
     founderLabel: "THE PERSON BEHIND THE EMAIL",
     founderPlaceholder: "[Founder name]",
     founderIntro:
-      "I’m {founder}, the person behind Green Shield and the email you received.",
+      "I’m {founder}, the person behind BAOORE AgriTrade and the email you received.",
     founderText:
       "Before we discuss a possible trade, I’d like you to have a clear picture of who I am and what the business can offer.",
     bioPlaceholder:
-      "Add a short factual introduction: your background, where you are based, your exact role and why you started Green Shield.",
+      "Add a short factual introduction: your background, where you are based, your exact role and why you started BAOORE AgriTrade.",
     familyTitle: "A family background in cocoa.",
     familyText:
-      "My family has been involved in the cocoa trade for more than 30 years. My father’s business has focused on local trading. Green Shield is a separate venture, building on that background.",
+      "My family has been involved in the cocoa trade for more than 30 years. My father’s business has focused on local trading. BAOORE AgriTrade is a separate venture, building on that background.",
     familyNote:
-      "Family history is distinct from Green Shield’s age or export record. Historical local volumes are not presented as current export capacity.",
+      "Family history is distinct from BAOORE AgriTrade’s age or export record. Historical local volumes are not presented as current export capacity.",
     portraitTitle: "Your photograph\nbelongs here.",
     portraitSmall: "REAL PERSON. SIMPLE SETTING.",
     portraitAlt:
       "Placeholder for the founder’s real photograph; no founder portrait has been confirmed.",
-    founderRole: "Founder · Green Shield",
+    founderRole: "Founder · BAOORE AgriTrade",
     toAdd: "TO ADD",
     videoTitle: "In my own words.",
     videoLabel: "OPTIONAL PERSONAL VIDEO",
@@ -141,7 +141,7 @@ export const copy = {
       "Product and origin are only the start. A useful discussion also needs specifications, quantities, delivery terms and the right documents.",
     supplyTitle: "Coffee, cocoa and cashew.",
     supplyIntro:
-      "Green Shield focuses on coffee, cocoa and cashew trading. Form, grade, origin, availability and documents are confirmed for each enquiry. Cocoa supplier relationships support our developing operations in Liberia; some began in Côte d’Ivoire.",
+      "BAOORE AgriTrade focuses on coffee, cocoa and cashew trading. Form, grade, origin, availability and documents are confirmed for each enquiry. Cocoa supplier relationships support our developing operations in Liberia; some began in Côte d’Ivoire.",
     supplyCaution:
       "Draft placeholders, not supply or certification claims. Availability and terms must be confirmed for each enquiry.",
     shippingTitle: "Shipment discussions",
@@ -262,9 +262,9 @@ export const copy = {
     draftNotes: "Notes de la maquette",
     skip: "Aller au contenu",
     getInTouch: "Nous contacter",
-    readAbout: "À propos de Green Shield",
+    readAbout: "À propos de BAOORE AgriTrade",
     seeCocoa: "Parlons de votre besoin",
-    homeEyebrow: "GREEN SHIELD / FAISONS CONNAISSANCE",
+    homeEyebrow: "BAOORE AGRITRADE / FAISONS CONNAISSANCE",
     homeTitle: "Parlons négoce.",
     homeTitleEm: "En toute simplicité.",
     homeLead:
@@ -303,28 +303,28 @@ export const copy = {
         page: "contact",
       },
     ],
-    aboutEyebrow: "À PROPOS DE GREEN SHIELD",
+    aboutEyebrow: "À PROPOS DE BAOORE AGRITRADE",
     aboutTitle: "Faisons connaissance.",
     aboutLead:
       "Une histoire familiale dans le commerce, et une nouvelle conversation professionnelle.",
     founderLabel: "LA PERSONNE DERRIÈRE L’E-MAIL",
     founderPlaceholder: "[Nom du fondateur]",
     founderIntro:
-      "Je suis {founder}, à l’origine de Green Shield et de l’e-mail que vous avez reçu.",
+      "Je suis {founder}, à l’origine de BAOORE AgriTrade et de l’e-mail que vous avez reçu.",
     founderText:
       "Avant de discuter d’une éventuelle transaction, je souhaite vous donner une vision claire de mon parcours et de ce que l’entreprise peut proposer.",
     bioPlaceholder:
-      "Ajouter une courte présentation factuelle : votre parcours, votre lieu d’activité, votre rôle exact et les raisons de la création de Green Shield.",
+      "Ajouter une courte présentation factuelle : votre parcours, votre lieu d’activité, votre rôle exact et les raisons de la création de BAOORE AgriTrade.",
     familyTitle: "Une histoire familiale dans le cacao.",
     familyText:
-      "Ma famille est présente dans le commerce du cacao depuis plus de 30 ans. L’activité de mon père s’est concentrée sur le négoce local. Green Shield est une entreprise distincte, qui s’appuie sur ce parcours.",
+      "Ma famille est présente dans le commerce du cacao depuis plus de 30 ans. L’activité de mon père s’est concentrée sur le négoce local. BAOORE AgriTrade est une entreprise distincte, qui s’appuie sur ce parcours.",
     familyNote:
-      "L’histoire familiale ne correspond ni à l’ancienneté de Green Shield, ni à des références à l’export. Les volumes locaux historiques ne sont pas présentés comme une capacité actuelle d’exportation.",
+      "L’histoire familiale ne correspond ni à l’ancienneté de BAOORE AgriTrade, ni à des références à l’export. Les volumes locaux historiques ne sont pas présentés comme une capacité actuelle d’exportation.",
     portraitTitle: "Votre photographie\na sa place ici.",
     portraitSmall: "UNE VRAIE PERSONNE. UN CADRE SIMPLE.",
     portraitAlt:
       "Emplacement pour une véritable photographie du fondateur ; aucun portrait n’a encore été confirmé.",
-    founderRole: "Fondateur · Green Shield",
+    founderRole: "Fondateur · BAOORE AgriTrade",
     toAdd: "À AJOUTER",
     videoTitle: "Avec mes propres mots.",
     videoLabel: "VIDÉO PERSONNELLE FACULTATIVE",
@@ -362,7 +362,7 @@ export const copy = {
       "Le produit et l’origine ne suffisent pas. Un échange utile précise aussi les spécifications, les quantités, les conditions de livraison et les documents nécessaires.",
     supplyTitle: "Café, cacao et anacarde.",
     supplyIntro:
-      "Green Shield se consacre au négoce de café, cacao et anacarde. La forme, la qualité, l’origine, la disponibilité et les documents sont confirmés pour chaque demande. Des relations fournisseurs dans le cacao accompagnent le développement au Liberia ; certaines sont nées en Côte d’Ivoire.",
+      "BAOORE AgriTrade se consacre au négoce de café, cacao et anacarde. La forme, la qualité, l’origine, la disponibilité et les documents sont confirmés pour chaque demande. Des relations fournisseurs dans le cacao accompagnent le développement au Liberia ; certaines sont nées en Côte d’Ivoire.",
     supplyCaution:
       "Champs provisoires, sans déclaration de capacité ni de certification. La disponibilité et les conditions doivent être confirmées pour chaque demande.",
     shippingTitle: "Possibilités d’expédition à discuter",

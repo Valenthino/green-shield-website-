@@ -5,11 +5,11 @@ import "../globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Green Shield | Coffee, cocoa & cashew trading",
-    template: "%s | Green Shield",
+    default: "BAOORE AgriTrade | Coffee, cocoa & cashew trading",
+    template: "%s | BAOORE AgriTrade",
   },
   description:
-    "Green Shield — coffee, cocoa & cashew / café, cacao et anacarde. Agricultural trade in West Africa / Négoce agricole en Afrique de l’Ouest.",
+    "BAOORE AgriTrade — African Origins. Global Trade. Coffee, cocoa & cashew / café, cacao et anacarde. Agricultural trade in West Africa / Négoce agricole en Afrique de l’Ouest.",
   robots: { index: false, follow: false },
   icons: { icon: "/icon.svg" },
 };

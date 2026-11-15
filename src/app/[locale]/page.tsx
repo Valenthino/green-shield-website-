@@ -17,8 +17,8 @@ export async function generateMetadata({
     title: {
       absolute:
         locale === "fr"
-          ? "Green Shield | Café, cacao et anacarde"
-          : "Green Shield | Coffee, cocoa & cashew trading",
+          ? "BAOORE AgriTrade | Café, cacao et anacarde"
+          : "BAOORE AgriTrade | Coffee, cocoa & cashew trading",
     },
   };
 }
