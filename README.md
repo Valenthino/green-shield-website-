@@ -1,4 +1,4 @@
-# Green Shield — bilingual marketing website
+# BAOORE AgriTrade — bilingual marketing website
 
 Portable static-export Next.js website: Home, About, Products & Sourcing, and Contact in English and French. Independent of the CRM. No CRM records, private research, passwords, or backend integrations are included.
 
@@ -18,7 +18,7 @@ Do not change the separate CRM repository, app, datastore, or runtime environmen
 The EN/FR switch preserves the current page. Saved preference wins over browser language. With no saved choice, French primary browser language produces a suggestion. Language choice is the only localStorage value.
 
 ## Content and media
-Editorial copy is in `src/content/redesign.ts`; shared business fields, language labels and enquiry templates are in `src/content/site.ts`. The redesign uses the existing five approved historical Côte d’Ivoire photographs. No new personal portrait is published. The founder's base is not a statement of company domicile. Family cocoa trading experience is distinct from Green Shield's age, export history or capacity. Product availability and trade terms are discussed case by case.
+Editorial copy is in `src/content/redesign.ts`; shared business fields, language labels and enquiry templates are in `src/content/site.ts`. The redesign uses the existing five approved historical Côte d’Ivoire photographs. No new personal portrait is published. The founder's base is not a statement of company domicile. Family cocoa trading experience is distinct from BAOORE AgriTrade's age, export history or capacity. Product availability and trade terms are discussed case by case.
 
 Unknown company particulars and email are omitted from the rendered site, not replaced with invented claims. Confirm factual details before adding them. The About page's wide field-media section can display an approved video by setting `business.introductionVideo`; until then it presents a useful photograph and caption without a fake playback control. Only add a founder portrait after publication authorization for the public repository and website.
 

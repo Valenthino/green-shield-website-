@@ -1,4 +1,4 @@
-# Green Shield — bilingual marketing website preview
+# BAOORE AgriTrade — bilingual marketing website preview
 
 Portable static-export Next.js website: Home, About, Products & Sourcing, Contact, each in English and French. Independent of the CRM. No CRM records, private research, passwords or backend integrations are included here.
 

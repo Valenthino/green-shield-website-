@@ -23,7 +23,7 @@ export async function generateMetadata({
     return {};
   return {
     title: {
-      absolute: `${copy[locale as Locale].nav[page as Page]} | Green Shield`,
+      absolute: `${copy[locale as Locale].nav[page as Page]} | BAOORE AgriTrade`,
     },
   };
 }
