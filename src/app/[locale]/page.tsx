@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Website from "@/components/website";
 import { locales, type Locale } from "@/content/site";
+import { pageAlternates } from "@/lib/seo";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -14,6 +15,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
+    alternates: pageAlternates(`/${locale}/`),
     title: {
       absolute:
         locale === "fr"
