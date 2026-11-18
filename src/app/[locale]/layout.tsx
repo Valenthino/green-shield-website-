@@ -1,16 +1,18 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/content/site";
+import { SITE_URL } from "@/lib/seo";
 import "../globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "BAOORE AgriTrade | Coffee, cocoa & cashew trading",
     template: "%s | BAOORE AgriTrade",
   },
   description:
     "BAOORE AgriTrade — African Origins. Global Trade. Coffee, cocoa & cashew / café, cacao et anacarde. Agricultural trade in West Africa / Négoce agricole en Afrique de l’Ouest.",
-  robots: { index: false, follow: false },
+  robots: { index: true, follow: true },
   icons: { icon: "/icon.svg" },
 };
 export const viewport: Viewport = { themeColor: "#2d3b2e" };

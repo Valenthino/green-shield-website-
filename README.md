@@ -22,4 +22,4 @@ Editorial copy is in `src/content/redesign.ts`; shared business fields, language
 
 Unknown company particulars and email are omitted from the rendered site, not replaced with invented claims. Confirm factual details before adding them. The About page's wide field-media section can display an approved video by setting `business.introductionVideo`; until then it presents a useful photograph and caption without a fake playback control. Only add a founder portrait after publication authorization for the public repository and website.
 
-The public marketing preview remains noindex. Noindex is not authentication. Enquiry templates copy text only; nothing sends or is stored. No tracking, analytics, external fonts, mailbox or CRM connection.
+The site is public and open to search engines at https://baooreagritrade.com (canonical address, with robots.txt and sitemap.xml); greenshield-site.vavqo.com serves the same build. Enquiry templates copy text only; nothing sends or is stored. No tracking, analytics, external fonts, mailbox or CRM connection.

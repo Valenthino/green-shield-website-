@@ -11,7 +11,9 @@ for(const route of routes){
  const language=route.startsWith('/fr/')?'fr':'en';
  assert.match(html,new RegExp(`<html[^>]*lang="${language}"`),`Wrong language: ${route}`);
  assert.equal((html.match(/<h1[\s>]/g)||[]).length,1,`Expected one h1: ${route}`);
- assert.match(html,/<meta name="robots" content="noindex, nofollow"\/>/,`Missing draft robots policy: ${route}`);
+ assert.match(html,/<meta name="robots" content="index, follow"\/>/,`Missing public robots policy: ${route}`);
+ const canonical=route==='/'?'/en/':route;
+ assert.ok(html.includes(`<link rel="canonical" href="https://baooreagritrade.com${canonical}"/>`),`Missing canonical: ${route}`);
  for(const [,set] of html.matchAll(/src[Ss]et="([^"]+)"/g)){
    for(const candidate of set.split(',')){
      const url=candidate.trim().split(/\s+/)[0];
@@ -26,7 +28,12 @@ for(const route of routes){
    if(statSync(target).isDirectory()) assert.ok(existsSync(resolve(target,'index.html')),`Missing index: ${value}`);
  }
 }
-console.log(`Export checks passed: ${routes.length} routes, language tags, h1 headings, noindex and local links/assets.`);
+const robots=readFileSync(resolve(root,'robots.txt'),'utf8');
+assert.match(robots,/Sitemap: https:\/\/baooreagritrade.com\/sitemap.xml/);
+assert.doesNotMatch(robots,/Disallow: \//);
+const sitemap=readFileSync(resolve(root,'sitemap.xml'),'utf8');
+for(const route of routes.filter(r=>r!=='/'))assert.ok(sitemap.includes(`https://baooreagritrade.com${route}`),`Sitemap missing ${route}`);
+console.log(`Export checks passed: ${routes.length} routes, language tags, h1 headings, public robots policy, canonical, sitemap and local links/assets.`);
 
 for(const language of ['en','fr']){
  const home=readFileSync(resolve(root,language,'index.html'),'utf8');
