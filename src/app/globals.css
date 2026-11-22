@@ -37,3 +37,6 @@
 .footer-grid nav{color:#4e4438}.footer-grid nav a{padding:2px 0}.footer-grid a:hover{color:#8b4b31}.footer-person{font-weight:700;color:var(--cocoa)}.footer-phone{font-size:15px}.footer-phone span{color:#7c6b56;font-size:11px}.footer-linkedin{border-bottom:1px solid #c7aa81;padding-bottom:5px;margin-top:6px;color:#7a4a31}.footer-bottom{border-top:1px solid #d6c9b6;color:#756958;font-size:11px}
 @media(max-width:800px){.product.cocoa{padding-top:22px}.products-detailed .product.cocoa{padding-top:27px}.footer-phone{font-size:13px}}
 @media(max-width:600px){.site-footer{padding-top:37px}.footer-grid h2{font-size:12px;letter-spacing:1px}.footer-phone{font-size:13px}.footer-bottom{font-size:10px}.contact-person{padding-left:20px}.product.cocoa{padding-top:22px}.products-detailed .product.cocoa{padding-top:23px}}
+
+.email-card strong{font-size:18px;letter-spacing:0;overflow-wrap:anywhere}.footer-email{overflow-wrap:anywhere}
+@media(max-width:800px){.utility-inner .utility-secondary{display:none}}

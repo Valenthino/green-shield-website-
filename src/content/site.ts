@@ -10,9 +10,10 @@ export function href(locale: Locale, page: Page = "home") {
 export const business = {
   brand: "BAOORE AgriTrade",
   founder: null as string | null,
-  email: null as string | null,
+  emails: ["contact@baooreagritrade.com", "sawadogovalentin53@gmail.com"],
   founderBase: "Vancouver, Canada",
   phones: [
+    { en: "Liberia", fr: "Liberia", display: "+231 76 165 3666", tel: "+231761653666" },
     { en: "Canada", fr: "Canada", display: "+1 778 513 7503", tel: "+17785137503" },
     { en: "Côte d’Ivoire", fr: "Côte d’Ivoire", display: "+225 07 15 43 17 75", tel: "+2250715431775" },
   ],
