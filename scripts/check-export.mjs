@@ -55,6 +55,7 @@ for(const route of routes){
  const visible=html.replace(/<script[\s\S]*?<\/script>/g,'').replace(/<style[\s\S]*?<\/style>/g,'');
  assert.doesNotMatch(visible,/Draft notes|Before launch|Website preview|\[Business email|\[Registered|\[Founder|Your photograph|belongs here|Notes de brouillon|Avant le lancement|Aperçu du site|À ajouter|TO ADD/i,`Draft content leaked: ${route}`);
  assert.doesNotMatch(visible,/valentin-founder|Valentin_sawadogo\.jpeg/,`Unapproved portrait: ${route}`);
+ assert.doesNotMatch(html,/Valentin|Sawadogo/i,`Founder full name must not be published: ${route}`);
  assert.match(visible,/tel:\+17785137503/);assert.match(visible,/tel:\+2250715431775/);
  if(route.includes('about'))assert.match(visible,/linkedin.com\/in\/valenthino/);
 }
