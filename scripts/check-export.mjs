@@ -57,6 +57,6 @@ for(const route of routes){
  assert.doesNotMatch(visible,/valentin-founder|Valentin_sawadogo\.jpeg/,`Unapproved portrait: ${route}`);
  assert.doesNotMatch(html.replaceAll('sawadogovalentin53@gmail.com',''),/Valentin|Sawadogo/i,`Founder full name must not be published: ${route}`);
  assert.match(visible,/tel:\+231761653666/);assert.match(visible,/mailto:contact@baooreagritrade\.com/);assert.match(visible,/mailto:sawadogovalentin53@gmail\.com/);assert.match(visible,/tel:\+17785137503/);assert.match(visible,/tel:\+2250715431775/);
- if(route.includes('about'))assert.match(visible,/linkedin.com\/in\/valenthino/);
+ if(route.includes('about')){assert.match(visible,/linkedin.com\/in\/valenthino/);assert.match(visible,/founder-yard-800\.webp/);}
 }
 console.log('Publication checks passed: no visible draft notes/placeholders, no unapproved headshot, public phone links present.');
