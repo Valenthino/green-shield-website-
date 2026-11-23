@@ -22,7 +22,7 @@
 :root{--cocoa:#574336;--sand:#eee5d7;--warm-line:#d9cfbf}
 .button-forest,.button-dark{background:var(--cocoa);color:#fff}
 .text-link:hover{border-color:var(--rust)}
-.page-title,.title-cocoa,.title-contact{background:var(--cream);color:var(--ink);border-bottom:5px solid var(--gold)}
+.page-title,.title-products,.title-contact{background:var(--cream);color:var(--ink);border-bottom:5px solid var(--gold)}
 .breadcrumbs{color:#766651}.breadcrumbs a{color:var(--rust)}.page-lead{color:#655d51}
 .product.coffee{background:#8b4b31}.product.cocoa{background:#fff;color:var(--cocoa);box-shadow:inset 0 0 0 1px var(--warm-line);border-top:5px solid var(--rust);padding-top:28px}.product.cocoa .product-description{color:var(--cocoa)}
 .product.cashew{background:var(--gold);color:#332e23}.product.cocoa .product-index{color:var(--rust)}
@@ -37,3 +37,25 @@
 .footer-grid nav{color:#4e4438}.footer-grid nav a{padding:2px 0}.footer-grid a:hover{color:#8b4b31}.footer-person{font-weight:700;color:var(--cocoa)}.footer-phone{font-size:15px}.footer-phone span{color:#7c6b56;font-size:11px}.footer-linkedin{border-bottom:1px solid #c7aa81;padding-bottom:5px;margin-top:6px;color:#7a4a31}.footer-bottom{border-top:1px solid #d6c9b6;color:#756958;font-size:11px}
 @media(max-width:800px){.product.cocoa{padding-top:22px}.products-detailed .product.cocoa{padding-top:27px}.footer-phone{font-size:13px}}
 @media(max-width:600px){.site-footer{padding-top:37px}.footer-grid h2{font-size:12px;letter-spacing:1px}.footer-phone{font-size:13px}.footer-bottom{font-size:10px}.contact-person{padding-left:20px}.product.cocoa{padding-top:22px}.products-detailed .product.cocoa{padding-top:23px}}
+/* Trade details, WhatsApp, enquiry form and legal pages (2026-11-23). Square corners, the site's palette. */
+.product-specs-title{font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;margin-top:22px;opacity:.85}
+.product-specs{margin:10px 0 24px;padding:0;list-style:none;font-size:14px;line-height:1.55}.product-specs li{padding:7px 0 7px 18px;border-top:1px solid currentColor;border-top-color:color-mix(in srgb,currentColor 22%,transparent);position:relative}.product-specs li:before{content:'';position:absolute;left:0;top:15px;width:7px;height:7px;background:currentColor;opacity:.6}
+.trade-terms{background:var(--cream)}.trade-grid{display:grid;grid-template-columns:1fr 1fr;gap:85px}.trade-grid>div>p{color:#655d51;margin-top:18px}
+.documents-box{margin-top:34px;background:#fff;border-top:4px solid var(--gold);padding:26px 28px}.documents-box h3{font-size:18px}.documents-box ul{margin:14px 0 0;padding-left:20px;font-size:15px;color:#4e4438}.documents-box li{padding:3px 0}
+.trade-steps{list-style:none;padding:0;margin:0}.trade-steps li{display:flex;gap:22px;padding:22px 0;border-top:1px solid var(--warm-line)}.trade-steps li:first-child{padding-top:0;border:0}.trade-steps li>span{color:var(--rust);font-size:13px;font-weight:700;padding-top:3px}.trade-steps h3{font-size:20px}.trade-steps p{font-size:14px;color:var(--muted);margin-top:10px}
+.whatsapp-card{border-top-color:#1f7a4a!important;background:#f1f7f2!important}.whatsapp-card .phone-call{color:#1f6b42}
+.icon-whatsapp{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linejoin:round;flex-shrink:0}
+.whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:40;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 20px;background:#1f6b42;color:#fff;font-weight:700;font-size:14px;border:2px solid #fff}.whatsapp-float:hover{background:#185836}
+.enquiry-form{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}.enquiry-form .wide{grid-column:1/-1}
+.form-field{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:#433a31}.form-field input,.form-field select,.form-field textarea{font:inherit;font-weight:400;font-size:16px;min-height:48px;padding:10px 12px;border:1px solid #c9bba6;border-radius:0;background:#fff;color:var(--ink)}.form-field textarea{min-height:110px;resize:vertical}.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:3px solid #c78623;outline-offset:1px;border-color:#8b4b31}
+.form-field input[aria-invalid=true]{border-color:var(--rust)}.form-error{color:var(--rust);font-weight:700;font-size:13px}
+.form-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}.button-whatsapp{background:#1f6b42;color:#fff}.button-whatsapp:hover{background:#185836}
+.footer-legal{display:inline-flex;flex-wrap:wrap;gap:18px}.footer-legal a{text-decoration:underline;text-underline-offset:3px}
+.legal-body{max-width:760px}.legal-body>div+div{margin-top:34px}.legal-body h2{font-size:24px;letter-spacing:-.5px}.legal-body p{margin-top:10px;color:#4e4438}.legal-body .fine-print{margin-top:40px}
+.company-facts{margin-top:30px;border-top:1px solid var(--warm-line);padding-top:20px}.company-facts h3{font-size:18px}.company-facts dl{margin:10px 0 0}.company-facts dt{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#7c6b56;margin-top:10px}.company-facts dd{margin:2px 0 0}
+@media(max-width:800px){.trade-grid{grid-template-columns:1fr;gap:40px}}
+@media(max-width:600px){.enquiry-form{grid-template-columns:1fr}.whatsapp-float{right:12px;bottom:12px;padding:0 16px}.whatsapp-float span{display:none}.whatsapp-float{width:56px;justify-content:center;padding:0}.site-footer{padding-bottom:70px}}
+.form-honey{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.form-sent{border-left:4px solid #1f6b42;background:#f1f7f2;padding:22px 24px;font-size:17px;color:#1d3b2a}.form-sent .text-button-plain{margin-top:14px;background:none;border:0;padding:0;font-weight:700;text-decoration:underline;text-underline-offset:3px;color:var(--cocoa);min-height:44px}
+.contact-email{display:block;margin-top:12px;font-weight:700;color:var(--cocoa);text-decoration:underline;text-underline-offset:4px;word-break:break-all}.footer-email{word-break:break-all}
+.utility-inner a span{font-weight:400}

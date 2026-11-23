@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import { copy, href, type Locale, type Page } from "@/content/site";
+import { trade } from "@/content/trade";
 
 import { languageDecision } from "@/lib/language";
 
@@ -140,44 +141,140 @@ export function Modal({
   );
 }
 
-export function EnquiryTemplate({ locale }: { locale: Locale }) {
-  const t = copy[locale];
-  const [status, setStatus] = useState<string>(t.copyIdle);
-  const detailsRef = useRef<HTMLDetailsElement>(null);
-  const templateRef = useRef<HTMLPreElement>(null);
-  async function copyText() {
+export function EnquiryForm({
+  locale,
+  whatsapp,
+  inbox,
+}: {
+  locale: Locale;
+  whatsapp: string | null;
+  inbox: string | null;
+}) {
+  const w = trade[locale];
+  const f = w.fields;
+  const [errors, setErrors] = useState<{ name?: string; email?: string }>({});
+  const [state, setState] = useState<"idle" | "sending" | "sent" | "failed">("idle");
+  const formId = useId();
+  const keys = ["name", "email", "phone", "company", "country", "product", "quantity", "destination", "incoterm"] as const;
+  function read(form: HTMLFormElement) {
+    const data = new FormData(form);
+    const value = (key: string) => String(data.get(key) || "").trim();
+    return { value, message: value("message") };
+  }
+  function check(form: HTMLFormElement, needEmail: boolean) {
+    const { value } = read(form);
+    const next: { name?: string; email?: string } = {};
+    if (!value("name")) next.name = w.needName;
+    if (needEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value("email"))) next.email = w.needEmail;
+    setErrors(next);
+    const first = next.name ? "name" : next.email ? "email" : null;
+    if (first) (form.elements.namedItem(first) as HTMLInputElement).focus();
+    return !first;
+  }
+  function whatsappText(form: HTMLFormElement) {
+    const { value, message } = read(form);
+    const lines = [w.messageIntro, ""];
+    for (const key of keys) if (value(key)) lines.push(`${f[key]}: ${value(key)}`);
+    if (message) lines.push("", message);
+    return lines.join("\n");
+  }
+  async function sendEmail(form: HTMLFormElement) {
+    if (!inbox || !check(form, true)) return;
+    const { value, message } = read(form);
+    if (value("_honey")) return;
+    setState("sending");
+    const body: Record<string, string> = {
+      _subject: `BAOORE AgriTrade enquiry: ${value("product")} · ${value("company") || value("name")}`,
+      _template: "table",
+      _captcha: "false",
+      _replyto: value("email"),
+      Language: locale.toUpperCase(),
+    };
+    for (const key of keys) if (value(key)) body[trade.en.fields[key]] = value(key);
+    if (message) body["Message"] = message;
     try {
-      if (!navigator.clipboard || !window.isSecureContext)
-        throw new Error("Clipboard unavailable");
-      await navigator.clipboard.writeText(t.enquiry);
-      setStatus(t.copySuccess);
+      const response = await fetch(`https://formsubmit.co/ajax/${inbox}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(body),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || String(result.success) !== "true") throw new Error("not sent");
+      setState("sent");
+      form.reset();
     } catch {
-      setStatus(t.copyFailure);
-      if (detailsRef.current) detailsRef.current.open = true;
-      if (templateRef.current) {
-        const range = document.createRange();
-        range.selectNodeContents(templateRef.current);
-        const selection = window.getSelection();
-        selection?.removeAllRanges();
-        selection?.addRange(range);
-      }
+      setState("failed");
     }
   }
+  function sendWhatsapp(form: HTMLFormElement) {
+    if (!whatsapp || !check(form, false)) return;
+    window.open(`https://wa.me/${whatsapp}?text=${encodeURIComponent(whatsappText(form))}`, "_blank", "noopener");
+  }
+  const field = (key: "name" | "email", type: string, autoComplete: string) => (
+    <label className="form-field" htmlFor={`${formId}-${key}`}>
+      <span>{f[key]} *</span>
+      <input
+        id={`${formId}-${key}`}
+        name={key}
+        type={type}
+        autoComplete={autoComplete}
+        aria-invalid={errors[key] ? true : undefined}
+        aria-describedby={errors[key] ? `${formId}-${key}-error` : undefined}
+      />
+      {errors[key] && <small className="form-error" id={`${formId}-${key}-error`} role="alert">{errors[key]}</small>}
+    </label>
+  );
+  if (state === "sent")
+    return (
+      <div className="form-sent" role="status">
+        <p>{w.sent}</p>
+        <button type="button" className="text-button-plain" onClick={() => setState("idle")}>{w.formTitle}</button>
+      </div>
+    );
   return (
-    <>
-      <button type="button" className="button button-dark" onClick={copyText}>
-        {t.copyTemplate}
-        <svg className="icon-arrow" aria-hidden="true" viewBox="0 0 16 16">
-          <path d="M3 13 13 3M3 3h10v10" />
-        </svg>
-      </button>
-      <p className="copy-status" role="status">
-        {status}
-      </p>
-      <details className="enquiry-details" ref={detailsRef}>
-        <summary>{t.viewTemplate}</summary>
-        <pre ref={templateRef}>{t.enquiry}</pre>
-      </details>
-    </>
+    <form
+      className="enquiry-form"
+      noValidate
+      onSubmit={(event) => {
+        event.preventDefault();
+        void (inbox ? sendEmail(event.currentTarget) : sendWhatsapp(event.currentTarget));
+      }}
+    >
+      {field("name", "text", "name")}
+      {field("email", "email", "email")}
+      <label className="form-field"><span>{f.phone}</span><input name="phone" type="tel" autoComplete="tel" /></label>
+      <label className="form-field"><span>{f.company}</span><input name="company" autoComplete="organization" /></label>
+      <label className="form-field"><span>{f.country}</span><input name="country" autoComplete="country-name" /></label>
+      <label className="form-field">
+        <span>{f.product}</span>
+        <select name="product" defaultValue={w.productOptions[0]}>
+          {w.productOptions.map((option) => <option key={option}>{option}</option>)}
+        </select>
+      </label>
+      <label className="form-field"><span>{f.quantity}</span><input name="quantity" placeholder={f.quantityHint} /></label>
+      <label className="form-field"><span>{f.destination}</span><input name="destination" /></label>
+      <label className="form-field">
+        <span>{f.incoterm}</span>
+        <select name="incoterm" defaultValue={w.incotermOptions[0]}>
+          {w.incotermOptions.map((option) => <option key={option}>{option}</option>)}
+        </select>
+      </label>
+      <label className="form-field wide"><span>{f.message}</span><textarea name="message" rows={4} /></label>
+      <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="form-honey" aria-hidden="true" />
+      {state === "failed" && <p className="form-error wide" role="alert">{w.sendFailed}</p>}
+      <div className="form-actions wide">
+        {inbox && (
+          <button type="submit" className="button button-dark" disabled={state === "sending"}>
+            {state === "sending" ? w.sending : w.sendEmail}
+            <svg className="icon-arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" /></svg>
+          </button>
+        )}
+        {whatsapp && (
+          <button type="button" className="button button-whatsapp" onClick={(event) => sendWhatsapp(event.currentTarget.form!)}>
+            {w.sendWhatsapp}
+          </button>
+        )}
+      </div>
+    </form>
   );
 }

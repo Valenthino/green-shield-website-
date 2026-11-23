@@ -6,14 +6,14 @@ Portable static-export Next.js website: Home, About, Products & Sourcing, and Co
 Node.js 24 recommended. Run `npm ci`, then `npm run check` (language/image tests, TypeScript, production build, exported-route and publication checks). Static output: `out/`.
 
 ## Existing deployment
-Public preview: https://greenshield-site.vavqo.com/ . Repository: Valenthino/green-shield-website-, main branch. Existing separate marketing application on Coolify. Build context: repository root `/`; Dockerfile: `/Dockerfile`. Docker builds with Node 24 and serves `out/` using Nginx on port 80. No environment variables, persistent volume, database, or Node runtime required. TLS terminates at the reverse proxy. Healthcheck: `GET /`.
+Live at https://baooreagritrade.com (also https://greenshield-site.vavqo.com/). Repository: Valenthino/green-shield-website-, main branch. Existing separate marketing application on Coolify. Build context: repository root `/`; Dockerfile: `/Dockerfile`. Docker builds with Node 24 and serves `out/` using Nginx on port 80. No environment variables, persistent volume, database, or Node runtime required. TLS terminates at the reverse proxy. Healthcheck: `GET /`.
 
 Do not change the separate CRM repository, app, datastore, or runtime environment. A hostname-root deployment is expected; no basePath is configured. Preserve existing resources.
 
 ## Languages
 `/` defaults to English. Routes:
-- `/en/`, `/en/about/`, `/en/cocoa/`, `/en/contact/`
-- `/fr/`, `/fr/about/`, `/fr/cocoa/`, `/fr/contact/`
+- `/en/`, `/en/about/`, `/en/products/`, `/en/contact/`, `/en/privacy/`, `/en/terms/` (the old `/cocoa/` address redirects to `/products/`)
+- `/fr/`, `/fr/about/`, `/fr/products/`, `/fr/contact/`, `/fr/privacy/`, `/fr/terms/`
 
 The EN/FR switch preserves the current page. Saved preference wins over browser language. With no saved choice, French primary browser language produces a suggestion. Language choice is the only localStorage value.
 
@@ -22,4 +22,4 @@ Editorial copy is in `src/content/redesign.ts`; shared business fields, language
 
 Unknown company particulars and email are omitted from the rendered site, not replaced with invented claims. Confirm factual details before adding them. The About page's wide field-media section can display an approved video by setting `business.introductionVideo`; until then it presents a useful photograph and caption without a fake playback control. Only add a founder portrait after publication authorization for the public repository and website.
 
-The site is public and open to search engines at https://baooreagritrade.com (canonical address, with robots.txt and sitemap.xml); greenshield-site.vavqo.com serves the same build. Enquiry templates copy text only; nothing sends or is stored. No tracking, analytics, external fonts, mailbox or CRM connection.
+The site is public and open to search engines at https://baooreagritrade.com (canonical address, with robots.txt and sitemap.xml); greenshield-site.vavqo.com serves the same build. The enquiry form opens WhatsApp (or email, once `business.email` is set) with the message filled in; nothing is sent to or stored on the site. Trade details and legal pages are in `src/content/trade.ts`. No tracking, analytics, external fonts, mailbox or CRM connection.

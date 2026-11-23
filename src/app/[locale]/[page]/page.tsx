@@ -4,7 +4,7 @@ import Website from "@/components/website";
 import { copy, locales, type Locale, type Page } from "@/content/site";
 import { pageAlternates } from "@/lib/seo";
 
-const subpages = ["about", "cocoa", "contact"] as const;
+const subpages = ["about", "products", "contact", "privacy", "terms"] as const;
 export const dynamicParams = false;
 export function generateStaticParams() {
   return locales.flatMap((locale) =>

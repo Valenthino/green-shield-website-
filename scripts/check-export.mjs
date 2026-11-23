@@ -2,7 +2,7 @@ import { readFileSync, existsSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
 import assert from 'node:assert/strict';
 const root=resolve('out');
-const routes=['/','/en/','/fr/',...['en','fr'].flatMap(lang=>['about','cocoa','contact'].map(page=>`/${lang}/${page}/`))];
+const routes=['/','/en/','/fr/',...['en','fr'].flatMap(lang=>['about','products','contact','privacy','terms'].map(page=>`/${lang}/${page}/`))];
 for(const route of routes){
  const file=resolve(root,'.'+route,'index.html');
  assert.ok(existsSync(file),`Missing route: ${route}`);
@@ -37,25 +37,30 @@ console.log(`Export checks passed: ${routes.length} routes, language tags, h1 he
 
 for(const language of ['en','fr']){
  const home=readFileSync(resolve(root,language,'index.html'),'utf8');
- const products=readFileSync(resolve(root,language,'cocoa/index.html'),'utf8');
+ const products=readFileSync(resolve(root,language,'products/index.html'),'utf8');
  assert.match(home,/field-visit-480.webp/, 'People-focused hero required');
- assert.doesNotMatch(home,/src="\/images\/cocoa-pod.jpg"/, 'Pod-only hero must not return');
+ const hero=home.slice(home.indexOf('class="hero '),home.indexOf('</section>',home.indexOf('class="hero ')));
+ assert.doesNotMatch(hero,/cocoa-pod/, 'Pod-only hero must not return');
  assert.match(home,language==='fr'?/CAFÉ · CACAO · ANACARDE/:/COFFEE · COCOA · CASHEW/);
  assert.match(products,/cashew-warehouse-800.webp/);
  assert.match(products,/cashew-yard-800.webp/);
  assert.match(products,/Monrovia/); assert.match(products,/Lomé/);
  assert.match(products,language==='fr'?/Les conditions commerciales sont fixées dans le devis/:/Trade terms are agreed in the quotation/);
- assert.match(products,language==='fr'?/Photographies d’archives/:/Historical photographs/);
- assert.doesNotMatch(products,/\bFOB\b/,'Unconfirmed trade term must not be asserted');
+ assert.match(products,/\bFOB\b/,'Products page states the trade term');
+ assert.match(products,/KOR/,'Cashew specs are listed');
 }
-console.log('Scope checks passed: human cocoa hero, three commodities, historical cashew gallery and qualified shipment locations.');
+console.log('Scope checks passed: human cocoa hero, three commodities, cashew gallery, FOB terms, specs and shipment locations.');
 
 for(const route of routes){
  const html=readFileSync(resolve(root,'.'+route,'index.html'),'utf8');
  const visible=html.replace(/<script[\s\S]*?<\/script>/g,'').replace(/<style[\s\S]*?<\/style>/g,'');
  assert.doesNotMatch(visible,/Draft notes|Before launch|Website preview|\[Business email|\[Registered|\[Founder|Your photograph|belongs here|Notes de brouillon|Avant le lancement|Aperçu du site|À ajouter|TO ADD/i,`Draft content leaked: ${route}`);
  assert.doesNotMatch(visible,/valentin-founder|Valentin_sawadogo\.jpeg/,`Unapproved portrait: ${route}`);
- assert.match(visible,/tel:\+17785137503/);assert.match(visible,/tel:\+2250715431775/);
+ assert.match(visible,/tel:\+17785137503/);assert.match(visible,/tel:\+231761653666/);assert.match(visible,/tel:\+2250715431775/);
+ assert.match(visible,/Monrovia, Liberia/);assert.match(visible,/mailto:contact@baooreagritrade\.com/);
  if(route.includes('about'))assert.match(visible,/linkedin.com\/in\/valenthino/);
+ assert.match(visible,/wa\.me\/231761653666/,`WhatsApp link missing: ${route}`);
+ assert.match(visible,/\/(en|fr)\/privacy\//,`Privacy link missing: ${route}`);
+ assert.doesNotMatch(visible,/do not show current Liberia stock|ne montrent pas de stock actuel|not BAOORE AgriTrade’s age|Archive photograph|Photo d’archives/,`Self-undermining caption back: ${route}`);
 }
 console.log('Publication checks passed: no visible draft notes/placeholders, no unapproved headshot, public phone links present.');
