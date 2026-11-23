@@ -196,6 +196,8 @@ export function EnquiryForm({
       const response = await fetch(`https://formsubmit.co/ajax/${inbox}`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
+        // The site sends no referrer by default; FormSubmit needs the page's origin.
+        referrerPolicy: "origin",
         body: JSON.stringify(body),
       });
       const result = await response.json().catch(() => ({}));
