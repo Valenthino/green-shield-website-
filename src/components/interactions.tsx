@@ -155,7 +155,7 @@ export function EnquiryForm({
   const [errors, setErrors] = useState<{ name?: string; email?: string }>({});
   const [state, setState] = useState<"idle" | "sending" | "sent" | "failed">("idle");
   const formId = useId();
-  const keys = ["name", "email", "phone", "company", "country", "product", "quantity", "destination", "incoterm"] as const;
+  const keys = ["name", "email", "phone", "company", "product"] as const;
   function read(form: HTMLFormElement) {
     const data = new FormData(form);
     const value = (key: string) => String(data.get(key) || "").trim();
@@ -246,19 +246,10 @@ export function EnquiryForm({
       {field("email", "email", "email")}
       <label className="form-field"><span>{f.phone}</span><input name="phone" type="tel" autoComplete="tel" /></label>
       <label className="form-field"><span>{f.company}</span><input name="company" autoComplete="organization" /></label>
-      <label className="form-field"><span>{f.country}</span><input name="country" autoComplete="country-name" /></label>
       <label className="form-field">
         <span>{f.product}</span>
         <select name="product" defaultValue={w.productOptions[0]}>
           {w.productOptions.map((option) => <option key={option}>{option}</option>)}
-        </select>
-      </label>
-      <label className="form-field"><span>{f.quantity}</span><input name="quantity" placeholder={f.quantityHint} /></label>
-      <label className="form-field"><span>{f.destination}</span><input name="destination" /></label>
-      <label className="form-field">
-        <span>{f.incoterm}</span>
-        <select name="incoterm" defaultValue={w.incotermOptions[0]}>
-          {w.incotermOptions.map((option) => <option key={option}>{option}</option>)}
         </select>
       </label>
       <label className="form-field wide"><span>{f.message}</span><textarea name="message" rows={4} /></label>

@@ -58,7 +58,7 @@ export const trade = {
     formLabel: "SEND AN ENQUIRY",
     formTitle: "Tell us what you need.",
     formText:
-      "Fill in what you know and press Send. Your enquiry comes straight to our inbox and we reply by email or WhatsApp. You can also send it on WhatsApp instead.",
+      "Just your name, your email and a few words. We reply by email or WhatsApp. You can also send it on WhatsApp instead.",
     fields: {
       name: "Your name",
       email: "Your email",
@@ -70,7 +70,7 @@ export const trade = {
       quantityHint: "e.g. 2 containers",
       destination: "Destination port",
       incoterm: "Delivery terms",
-      message: "Anything else (grade, timing, documents)",
+      message: "Your message",
     },
     productOptions: ["Cocoa", "Cashew", "Coffee", "Other"],
     incotermOptions: ["FOB", "CFR", "CIF", "Not sure yet"],
@@ -164,7 +164,7 @@ export const trade = {
     formLabel: "ENVOYER UNE DEMANDE",
     formTitle: "Dites-nous ce qu’il vous faut.",
     formText:
-      "Remplissez ce que vous savez et appuyez sur Envoyer. Votre demande arrive directement dans notre boîte et nous répondons par e-mail ou WhatsApp. Vous pouvez aussi l’envoyer sur WhatsApp.",
+      "Votre nom, votre e-mail et quelques mots suffisent. Nous répondons par e-mail ou WhatsApp. Vous pouvez aussi l’envoyer sur WhatsApp.",
     fields: {
       name: "Votre nom",
       email: "Votre e-mail",
@@ -176,7 +176,7 @@ export const trade = {
       quantityHint: "Ex. : 2 conteneurs",
       destination: "Port de destination",
       incoterm: "Conditions de livraison",
-      message: "Autres précisions (grade, délai, documents)",
+      message: "Votre message",
     },
     productOptions: ["Cacao", "Anacarde", "Café", "Autre"],
     incotermOptions: ["FOB", "CFR", "CIF", "Je ne sais pas encore"],
