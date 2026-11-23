@@ -9,12 +9,13 @@ export function href(locale: Locale, page: Page = "home") {
 // Keep unknown commercial facts null. A value here is displayed as a claim.
 export const business = {
   brand: "BAOORE AgriTrade",
-  founder: "Valentin Sawadogo" as string | null,
-  email: null as string | null,
+  founder: null as string | null,
+  emails: ["contact@baooreagritrade.com", "sawadogovalentin53@gmail.com"],
   founderBase: "Vancouver, Canada",
   phones: [
-    { en: "Canada", fr: "Canada", display: "+1 778 513 7503", tel: "+17785137503" },
-    { en: "Côte d’Ivoire", fr: "Côte d’Ivoire", display: "+225 07 15 43 17 75", tel: "+2250715431775" },
+    { en: "Monrovia, Liberia", fr: "Monrovia, Liberia", display: "+231 76 165 3666", tel: "+231761653666", header: true },
+    { en: "Vancouver, BC, Canada", fr: "Vancouver (C.-B.), Canada", display: "+1 778 513 7503", tel: "+17785137503", header: true },
+    { en: "Daloa, Côte d’Ivoire", fr: "Daloa, Côte d’Ivoire", display: "+225 07 15 43 17 75", tel: "+2250715431775", header: false },
   ],
   legalName: null as string | null,
   location: null as string | null,
@@ -190,7 +191,7 @@ export const copy = {
     copySuccess: "Copied. Paste into your email and fill in your requirements.",
     copyFailure: "Copying is unavailable. Select and copy the template below.",
     viewTemplate: "View the enquiry template",
-    enquiry: `Hello Valentin,\n\nI’m getting in touch about a possible coffee, cocoa or cashew requirement.\n\nCompany:\nProduct / grade:\nPreferred origin:\nRequired specifications:\nIndicative quantity:\nShipment timing:\nDestination:\nProposed delivery terms:\nRequired documents:\n\nPlease let me know whether this is something we can discuss.\n\nKind regards,\nYour name`,
+    enquiry: `Hello,\n\nI’m getting in touch about a possible coffee, cocoa or cashew requirement.\n\nCompany:\nProduct / grade:\nPreferred origin:\nRequired specifications:\nIndicative quantity:\nShipment timing:\nDestination:\nProposed delivery terms:\nRequired documents:\n\nPlease let me know whether this is something we can discuss.\n\nKind regards,\nYour name`,
     contactAsideTitle: "A few details are enough.",
     contactAside:
       "Share an outline of what you need. This site does not collect enquiries or ask you to upload commercial documents.",
@@ -413,7 +414,7 @@ export const copy = {
     copyFailure:
       "La copie automatique est indisponible. Sélectionnez et copiez le modèle ci-dessous.",
     viewTemplate: "Voir le modèle de demande",
-    enquiry: `Bonjour Valentin,\n\nJe vous contacte au sujet d’un éventuel besoin en café, cacao ou anacarde.\n\nEntreprise :\nProduit / qualité :\nOrigine souhaitée :\nSpécifications requises :\nQuantité indicative :\nPériode d’expédition :\nDestination :\nConditions de livraison envisagées :\nDocuments nécessaires :\n\nMerci de me préciser si ce besoin peut faire l’objet d’un échange.\n\nCordialement,\nVotre nom`,
+    enquiry: `Bonjour,\n\nJe vous contacte au sujet d’un éventuel besoin en café, cacao ou anacarde.\n\nEntreprise :\nProduit / qualité :\nOrigine souhaitée :\nSpécifications requises :\nQuantité indicative :\nPériode d’expédition :\nDestination :\nConditions de livraison envisagées :\nDocuments nécessaires :\n\nMerci de me préciser si ce besoin peut faire l’objet d’un échange.\n\nCordialement,\nVotre nom`,
     contactAsideTitle: "Quelques informations suffisent.",
     contactAside:
       "Présentez les grandes lignes de votre besoin. Ce site ne collecte pas de demandes et ne vous invite pas à téléverser de documents commerciaux.",
