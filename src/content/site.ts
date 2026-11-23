@@ -1,6 +1,6 @@
 export const locales = ["en", "fr"] as const;
 export type Locale = (typeof locales)[number];
-export const pages = ["home", "about", "cocoa", "contact"] as const;
+export const pages = ["home", "about", "products", "contact", "privacy", "terms"] as const;
 export type Page = (typeof pages)[number];
 export function href(locale: Locale, page: Page = "home") {
   return `/${locale}/${page === "home" ? "" : `${page}/`}`;
@@ -11,6 +11,8 @@ export const business = {
   brand: "BAOORE AgriTrade",
   founder: "Valentin Sawadogo" as string | null,
   email: null as string | null,
+  // WhatsApp number in international form, digits only (wa.me link).
+  whatsapp: { display: "+225 07 15 43 17 75", wa: "2250715431775" } as { display: string; wa: string } | null,
   founderBase: "Vancouver, Canada",
   phones: [
     { en: "Canada", fr: "Canada", display: "+1 778 513 7503", tel: "+17785137503" },
@@ -36,8 +38,10 @@ export const copy = {
     nav: {
       home: "Home",
       about: "About",
-      cocoa: "Products & sourcing",
+      products: "Products & sourcing",
       contact: "Contact",
+      privacy: "Privacy",
+      terms: "Terms of use",
     },
     draft: "Website preview",
     draftNotes: "Draft notes",
@@ -53,15 +57,15 @@ export const copy = {
     homeNote:
       "If you arrived here from my email, welcome. Here’s a little more about the person and business behind it.",
     homeImageLabel: "COCOA / CÔTE D’IVOIRE",
-    fieldCaption: "From earlier field visits in Côte d’Ivoire.",
+    fieldCaption: "Cocoa farm visit · Côte d’Ivoire",
     fieldCaution:
       "Historical photographs. Not evidence of current stock, ownership, or supply in Liberia.",
     fieldAlt:
-      "A person handling a cocoa pod on a tree during an earlier field visit in Côte d’Ivoire.",
+      "A farmer checking a cocoa pod on a tree in Côte d’Ivoire.",
     fieldVisitAlt:
-      "A person examining a cocoa pod among trees during an earlier visit in Côte d’Ivoire.",
+      "A farmer examining a cocoa pod among cocoa trees in Côte d’Ivoire.",
     cocoaPodsAlt:
-      "Cocoa pods in a user-supplied photograph from an earlier visit in Côte d’Ivoire.",
+      "Ripe cocoa pods on a tree in Côte d’Ivoire.",
     homeIntroLabel: "A BUSINESS INTRODUCTION",
     homeIntroTitle: "The person. The business.\nThe details.",
     homeIntroText:
@@ -75,7 +79,7 @@ export const copy = {
       {
         title: "Discuss your product requirements",
         text: "Product, origin, volume and delivery details.",
-        page: "cocoa",
+        page: "products",
       },
       {
         title: "Continue the conversation",
@@ -154,9 +158,9 @@ export const copy = {
     operationsTitle: "Cashew, beyond the field.",
     operationsIntro: "Earlier visits to cashew warehousing and handling operations in Côte d’Ivoire.",
     operationsCaution: "Historical photographs, not a claim of facility ownership, current stock or operations in Liberia.",
-    warehouseAlt: "A raised container-handling lift beside a warehouse during an earlier visit to cashew operations in Côte d’Ivoire.",
+    warehouseAlt: "A container-handling lift beside a cashew warehouse in Côte d’Ivoire.",
     warehouseCaption: "Cashew warehousing and handling · Côte d’Ivoire, earlier visit.",
-    yardAlt: "Cashew nuts spread across an operations yard, with workers and warehouse buildings, during an earlier visit in Côte d’Ivoire.",
+    yardAlt: "Cashew nuts drying across a yard, with workers and warehouse buildings, in Côte d’Ivoire.",
     yardCaption: "Cashew operations in an outdoor yard · Côte d’Ivoire, earlier visit.",
     requirementsTitle: "A useful first conversation",
     requirements: [
@@ -255,8 +259,10 @@ export const copy = {
     nav: {
       home: "Accueil",
       about: "À propos",
-      cocoa: "Produits & approvisionnement",
+      products: "Produits & approvisionnement",
       contact: "Contact",
+      privacy: "Confidentialité",
+      terms: "Conditions d’utilisation",
     },
     draft: "Aperçu du site",
     draftNotes: "Notes de la maquette",
@@ -272,15 +278,15 @@ export const copy = {
     homeNote:
       "Vous avez reçu mon e-mail ? Bienvenue. Voici quelques informations sur la personne et l’entreprise qui vous ont contacté.",
     homeImageLabel: "CACAO / CÔTE D’IVOIRE",
-    fieldCaption: "Photographies de précédentes visites en Côte d’Ivoire.",
+    fieldCaption: "Visite d’une plantation de cacao · Côte d’Ivoire",
     fieldCaution:
       "Photographies d’archives. Elles ne prouvent ni un stock actuel, ni sa propriété, ni une capacité d’approvisionnement au Liberia.",
     fieldAlt:
-      "Une personne manipule une cabosse sur un cacaoyer lors d’une précédente visite en Côte d’Ivoire.",
+      "Un planteur vérifie une cabosse sur un cacaoyer en Côte d’Ivoire.",
     fieldVisitAlt:
-      "Une personne examine une cabosse parmi des cacaoyers lors d’une précédente visite en Côte d’Ivoire.",
+      "Un planteur examine une cabosse parmi les cacaoyers en Côte d’Ivoire.",
     cocoaPodsAlt:
-      "Cabosses de cacao photographiées lors d’une précédente visite en Côte d’Ivoire, image fournie par le fondateur.",
+      "Cabosses de cacao mûres sur un arbre en Côte d’Ivoire.",
     homeIntroLabel: "PRÉSENTATION DE L’ENTREPRISE",
     homeIntroTitle:
       "Un interlocuteur. Une entreprise.\nDes informations claires.",
@@ -295,7 +301,7 @@ export const copy = {
       {
         title: "Préciser votre besoin",
         text: "Produit, origine, volumes et conditions de livraison.",
-        page: "cocoa",
+        page: "products",
       },
       {
         title: "Poursuivre la conversation",
@@ -375,9 +381,9 @@ export const copy = {
     operationsTitle: "L’anacarde, au-delà des plantations.",
     operationsIntro: "De précédentes visites d’opérations de stockage et de manutention d’anacarde en Côte d’Ivoire.",
     operationsCaution: "Photographies d’archives, sans déclaration de propriété des installations, de stock actuel ou d’activité au Liberia.",
-    warehouseAlt: "Un engin de manutention de conteneurs devant un entrepôt lors d’une précédente visite d’opérations sur l’anacarde en Côte d’Ivoire.",
+    warehouseAlt: "Un engin de manutention de conteneurs devant un entrepôt d’anacarde en Côte d’Ivoire.",
     warehouseCaption: "Stockage et manutention d’anacarde · précédente visite en Côte d’Ivoire.",
-    yardAlt: "Des noix de cajou étalées dans une cour, avec des travailleurs et des bâtiments de stockage, lors d’une précédente visite en Côte d’Ivoire.",
+    yardAlt: "Des noix de cajou qui sèchent dans une cour, avec des travailleurs et des entrepôts, en Côte d’Ivoire.",
     yardCaption: "Opérations sur l’anacarde en extérieur · précédente visite en Côte d’Ivoire.",
     requirementsTitle: "Un premier échange utile",
     requirements: [

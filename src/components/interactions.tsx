@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import { copy, href, type Locale, type Page } from "@/content/site";
+import { trade } from "@/content/trade";
 
 import { languageDecision } from "@/lib/language";
 
@@ -140,44 +141,87 @@ export function Modal({
   );
 }
 
-export function EnquiryTemplate({ locale }: { locale: Locale }) {
-  const t = copy[locale];
-  const [status, setStatus] = useState<string>(t.copyIdle);
-  const detailsRef = useRef<HTMLDetailsElement>(null);
-  const templateRef = useRef<HTMLPreElement>(null);
-  async function copyText() {
-    try {
-      if (!navigator.clipboard || !window.isSecureContext)
-        throw new Error("Clipboard unavailable");
-      await navigator.clipboard.writeText(t.enquiry);
-      setStatus(t.copySuccess);
-    } catch {
-      setStatus(t.copyFailure);
-      if (detailsRef.current) detailsRef.current.open = true;
-      if (templateRef.current) {
-        const range = document.createRange();
-        range.selectNodeContents(templateRef.current);
-        const selection = window.getSelection();
-        selection?.removeAllRanges();
-        selection?.addRange(range);
-      }
+export function EnquiryForm({
+  locale,
+  whatsapp,
+  email,
+}: {
+  locale: Locale;
+  whatsapp: string | null;
+  email: string | null;
+}) {
+  const w = trade[locale];
+  const f = w.fields;
+  const [error, setError] = useState("");
+  const nameId = useId();
+  function message(form: HTMLFormElement) {
+    const data = new FormData(form);
+    const value = (key: string) => String(data.get(key) || "").trim();
+    const lines = [w.messageIntro, ""];
+    for (const key of ["name", "company", "country", "product", "quantity", "destination", "incoterm"] as const) {
+      if (value(key)) lines.push(`${f[key]}: ${value(key)}`);
     }
+    if (value("message")) lines.push("", value("message"));
+    return lines.join("\n");
+  }
+  function send(form: HTMLFormElement, channel: "whatsapp" | "email") {
+    const name = form.elements.namedItem("name") as HTMLInputElement;
+    if (!name.value.trim()) {
+      setError(w.needName);
+      name.focus();
+      return;
+    }
+    setError("");
+    const text = message(form);
+    if (channel === "whatsapp" && whatsapp)
+      window.open(`https://wa.me/${whatsapp}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+    if (channel === "email" && email)
+      window.location.href = `mailto:${email}?subject=${encodeURIComponent(w.formTitle)}&body=${encodeURIComponent(text)}`;
   }
   return (
-    <>
-      <button type="button" className="button button-dark" onClick={copyText}>
-        {t.copyTemplate}
-        <svg className="icon-arrow" aria-hidden="true" viewBox="0 0 16 16">
-          <path d="M3 13 13 3M3 3h10v10" />
-        </svg>
-      </button>
-      <p className="copy-status" role="status">
-        {status}
-      </p>
-      <details className="enquiry-details" ref={detailsRef}>
-        <summary>{t.viewTemplate}</summary>
-        <pre ref={templateRef}>{t.enquiry}</pre>
-      </details>
-    </>
+    <form
+      className="enquiry-form"
+      noValidate
+      onSubmit={(event) => {
+        event.preventDefault();
+        send(event.currentTarget, whatsapp ? "whatsapp" : "email");
+      }}
+    >
+      <label className="form-field" htmlFor={nameId}>
+        <span>{f.name} *</span>
+        <input id={nameId} name="name" autoComplete="name" aria-invalid={error ? true : undefined} aria-describedby={error ? `${nameId}-error` : undefined} />
+        {error && <small className="form-error" id={`${nameId}-error`} role="alert">{error}</small>}
+      </label>
+      <label className="form-field"><span>{f.company}</span><input name="company" autoComplete="organization" /></label>
+      <label className="form-field"><span>{f.country}</span><input name="country" autoComplete="country-name" /></label>
+      <label className="form-field">
+        <span>{f.product}</span>
+        <select name="product" defaultValue={w.productOptions[0]}>
+          {w.productOptions.map((option) => <option key={option}>{option}</option>)}
+        </select>
+      </label>
+      <label className="form-field"><span>{f.quantity}</span><input name="quantity" placeholder={f.quantityHint} /></label>
+      <label className="form-field"><span>{f.destination}</span><input name="destination" /></label>
+      <label className="form-field">
+        <span>{f.incoterm}</span>
+        <select name="incoterm" defaultValue={w.incotermOptions[0]}>
+          {w.incotermOptions.map((option) => <option key={option}>{option}</option>)}
+        </select>
+      </label>
+      <label className="form-field wide"><span>{f.message}</span><textarea name="message" rows={4} /></label>
+      <div className="form-actions wide">
+        {whatsapp && (
+          <button type="submit" className="button button-whatsapp">
+            {w.sendWhatsapp}
+            <svg className="icon-arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" /></svg>
+          </button>
+        )}
+        {email && (
+          <button type="button" className="button button-dark" onClick={(event) => send(event.currentTarget.form!, "email")}>
+            {w.sendEmail}
+          </button>
+        )}
+      </div>
+    </form>
   );
 }
