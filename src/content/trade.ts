@@ -58,9 +58,11 @@ export const trade = {
     formLabel: "SEND AN ENQUIRY",
     formTitle: "Tell us what you need.",
     formText:
-      "Fill in what you know. The button opens WhatsApp with your message ready to send. Nothing is stored on this website.",
+      "Fill in what you know and press Send. Your enquiry comes straight to our inbox and we reply by email or WhatsApp. You can also send it on WhatsApp instead.",
     fields: {
       name: "Your name",
+      email: "Your email",
+      phone: "Phone / WhatsApp",
       company: "Company",
       country: "Country",
       product: "Product",
@@ -73,8 +75,13 @@ export const trade = {
     productOptions: ["Cocoa", "Cashew", "Coffee", "Other"],
     incotermOptions: ["FOB", "CFR", "CIF", "Not sure yet"],
     sendWhatsapp: "Send on WhatsApp",
-    sendEmail: "Send by email",
+    sendEmail: "Send enquiry",
+    sending: "Sending…",
     needName: "Please enter your name.",
+    needEmail: "Please enter a valid email address so we can reply.",
+    sent: "Thank you. Your enquiry has been sent. We will reply soon.",
+    sendFailed: "Your enquiry could not be sent. Please try again, or send it on WhatsApp.",
+    emailUs: "Email",
     messageIntro: "Hello BAOORE AgriTrade, I have an enquiry.",
     companyLabel: "Company details",
     companyFacts: {
@@ -88,7 +95,7 @@ export const trade = {
     privacy: [
       { title: "No tracking", text: "This website has no analytics, no advertising pixels and no outside fonts or scripts. It does not use cookies." },
       { title: "Your language", text: "If you choose English or French, that choice is kept only in your own browser." },
-      { title: "Enquiries", text: "The enquiry form does not send anything to this website. It opens WhatsApp or your email program with your message, and you decide whether to send it. What you send is then handled by WhatsApp or your email provider, and by us to answer you." },
+      { title: "Enquiries", text: "When you press Send, the enquiry form passes your message to the FormSubmit service (formsubmit.co), which emails it to us. Nothing is stored on this website. If you choose WhatsApp instead, your message is handled by WhatsApp. We use what you send only to answer you." },
       { title: "How we use what you send", text: "We use your name, company and contact details only to answer your enquiry and to prepare quotations and contracts. We do not sell or share them for marketing." },
       { title: "Your rights", text: "You can ask us at any time what we hold about you, or ask us to correct or delete it, through the contact details on this website." },
     ],
@@ -157,9 +164,11 @@ export const trade = {
     formLabel: "ENVOYER UNE DEMANDE",
     formTitle: "Dites-nous ce qu’il vous faut.",
     formText:
-      "Remplissez ce que vous savez. Le bouton ouvre WhatsApp avec votre message prêt à envoyer. Rien n’est enregistré sur ce site.",
+      "Remplissez ce que vous savez et appuyez sur Envoyer. Votre demande arrive directement dans notre boîte et nous répondons par e-mail ou WhatsApp. Vous pouvez aussi l’envoyer sur WhatsApp.",
     fields: {
       name: "Votre nom",
+      email: "Votre e-mail",
+      phone: "Téléphone / WhatsApp",
       company: "Entreprise",
       country: "Pays",
       product: "Produit",
@@ -172,8 +181,13 @@ export const trade = {
     productOptions: ["Cacao", "Anacarde", "Café", "Autre"],
     incotermOptions: ["FOB", "CFR", "CIF", "Je ne sais pas encore"],
     sendWhatsapp: "Envoyer sur WhatsApp",
-    sendEmail: "Envoyer par e-mail",
+    sendEmail: "Envoyer la demande",
+    sending: "Envoi…",
     needName: "Indiquez votre nom.",
+    needEmail: "Indiquez une adresse e-mail valide pour que nous puissions répondre.",
+    sent: "Merci. Votre demande a bien été envoyée. Nous vous répondrons rapidement.",
+    sendFailed: "Votre demande n’a pas pu être envoyée. Réessayez, ou envoyez-la sur WhatsApp.",
+    emailUs: "E-mail",
     messageIntro: "Bonjour BAOORE AgriTrade, j’ai une demande.",
     companyLabel: "Informations sur l’entreprise",
     companyFacts: {
@@ -187,7 +201,7 @@ export const trade = {
     privacy: [
       { title: "Aucun suivi", text: "Ce site n’utilise ni statistiques de visite, ni pixels publicitaires, ni polices ou scripts externes. Il n’utilise pas de cookies." },
       { title: "Votre langue", text: "Si vous choisissez le français ou l’anglais, ce choix est gardé uniquement dans votre navigateur." },
-      { title: "Demandes", text: "Le formulaire de demande n’envoie rien à ce site. Il ouvre WhatsApp ou votre messagerie avec votre message, et c’est vous qui décidez de l’envoyer. Ce que vous envoyez est ensuite traité par WhatsApp ou votre fournisseur d’e-mail, et par nous pour vous répondre." },
+      { title: "Demandes", text: "Quand vous appuyez sur Envoyer, le formulaire transmet votre message au service FormSubmit (formsubmit.co), qui nous l’envoie par e-mail. Rien n’est enregistré sur ce site. Si vous choisissez WhatsApp, votre message est traité par WhatsApp. Nous utilisons ce que vous envoyez uniquement pour vous répondre." },
       { title: "Utilisation de vos informations", text: "Nous utilisons votre nom, votre entreprise et vos coordonnées uniquement pour répondre à votre demande et préparer devis et contrats. Nous ne les vendons pas et ne les partageons pas à des fins publicitaires." },
       { title: "Vos droits", text: "Vous pouvez à tout moment nous demander ce que nous détenons sur vous, ou nous demander de le corriger ou de le supprimer, grâce aux coordonnées de ce site." },
     ],

@@ -56,9 +56,10 @@ for(const route of routes){
  const visible=html.replace(/<script[\s\S]*?<\/script>/g,'').replace(/<style[\s\S]*?<\/style>/g,'');
  assert.doesNotMatch(visible,/Draft notes|Before launch|Website preview|\[Business email|\[Registered|\[Founder|Your photograph|belongs here|Notes de brouillon|Avant le lancement|Aperçu du site|À ajouter|TO ADD/i,`Draft content leaked: ${route}`);
  assert.doesNotMatch(visible,/valentin-founder|Valentin_sawadogo\.jpeg/,`Unapproved portrait: ${route}`);
- assert.match(visible,/tel:\+17785137503/);assert.match(visible,/tel:\+2250715431775/);
+ assert.match(visible,/tel:\+17785137503/);assert.match(visible,/tel:\+231761653666/);assert.match(visible,/tel:\+2250715431775/);
+ assert.match(visible,/Monrovia, Liberia/);assert.match(visible,/mailto:contact@baooreagritrade\.com/);
  if(route.includes('about'))assert.match(visible,/linkedin.com\/in\/valenthino/);
- assert.match(visible,/wa\.me\/2250715431775/,`WhatsApp link missing: ${route}`);
+ assert.match(visible,/wa\.me\/231761653666/,`WhatsApp link missing: ${route}`);
  assert.match(visible,/\/(en|fr)\/privacy\//,`Privacy link missing: ${route}`);
  assert.doesNotMatch(visible,/do not show current Liberia stock|ne montrent pas de stock actuel|not BAOORE AgriTrade’s age|Archive photograph|Photo d’archives/,`Self-undermining caption back: ${route}`);
 }

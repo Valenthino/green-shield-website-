@@ -10,13 +10,17 @@ export function href(locale: Locale, page: Page = "home") {
 export const business = {
   brand: "BAOORE AgriTrade",
   founder: "Valentin Sawadogo" as string | null,
-  email: null as string | null,
+  email: "contact@baooreagritrade.com" as string | null,
+  // Shown as a second address; the contact form delivers enquiries here (FormSubmit).
+  personalEmail: "sawadogovalentin53@gmail.com" as string | null,
   // WhatsApp number in international form, digits only (wa.me link).
-  whatsapp: { display: "+225 07 15 43 17 75", wa: "2250715431775" } as { display: string; wa: string } | null,
-  founderBase: "Vancouver, Canada",
+  whatsapp: { display: "+231 761 653 666", wa: "231761653666" } as { display: string; wa: string } | null,
+  founderBase: "Vancouver, BC, Canada",
+  // header: shown in the top bar. Order = order on the page.
   phones: [
-    { en: "Canada", fr: "Canada", display: "+1 778 513 7503", tel: "+17785137503" },
-    { en: "Côte d’Ivoire", fr: "Côte d’Ivoire", display: "+225 07 15 43 17 75", tel: "+2250715431775" },
+    { en: "Monrovia, Liberia", fr: "Monrovia, Liberia", display: "+231 761 653 666", tel: "+231761653666", header: true },
+    { en: "Vancouver, BC, Canada", fr: "Vancouver, C.-B., Canada", display: "+1 778 513 7503", tel: "+17785137503", header: true },
+    { en: "Daloa, Côte d’Ivoire", fr: "Daloa, Côte d’Ivoire", display: "+225 07 15 43 17 75", tel: "+2250715431775", header: false },
   ],
   legalName: null as string | null,
   location: null as string | null,
