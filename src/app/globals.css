@@ -59,3 +59,4 @@
 .form-sent{border-left:4px solid #1f6b42;background:#f1f7f2;padding:22px 24px;font-size:17px;color:#1d3b2a}.form-sent .text-button-plain{margin-top:14px;background:none;border:0;padding:0;font-weight:700;text-decoration:underline;text-underline-offset:3px;color:var(--cocoa);min-height:44px}
 .contact-email{display:block;margin-top:12px;font-weight:700;color:var(--cocoa);text-decoration:underline;text-underline-offset:4px;word-break:break-all}.footer-email{word-break:break-all}
 .utility-inner a span{font-weight:400}
+.founder-photo{margin:0 0 26px}.founder-photo img{width:100%;height:auto;display:block}.founder-photo figcaption{font-size:12px;color:#7c6b56;margin-top:8px}
