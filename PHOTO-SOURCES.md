@@ -2,11 +2,11 @@
 
 Real user-supplied images, authorized for this website preview. No AI or stock imagery.
 
-- public/images/cocoa-pod.jpg: cocoa pod on tree; preserved asset.
-- public/images/field-cocoa.jpg: person handling a cocoa pod, Products & Sourcing.
-- public/images/field-visit.jpg: person holding cocoa pods; homepage hero and field story.
-- public/images/cashew-warehouse.jpg: container-handling lift beside a warehouse, from historical Côte d’Ivoire cashew operations (source photograph Warehouse 79).
-- public/images/cashew-yard.jpg: cashew nuts, sacks and workers in an outdoor operations yard in Côte d’Ivoire (source photograph Warehouse 77).
+- public/images/v2/cocoa-pod.jpg: cocoa pod on tree; preserved asset.
+- public/images/v2/field-cocoa.jpg: person handling a cocoa pod, Products & Sourcing.
+- public/images/v2/field-visit.jpg: person holding cocoa pods; homepage hero and field story.
+- public/images/v2/cashew-warehouse.jpg: container-handling lift beside a warehouse, from historical Côte d’Ivoire cashew operations (source photograph Warehouse 79).
+- public/images/v2/cashew-yard.jpg: cashew nuts, sacks and workers in an outdoor operations yard in Côte d’Ivoire (source photograph Warehouse 77).
 
 The second photo collection was explicitly identified by the user as cashew operations, not cocoa. Captions identify earlier visits in Côte d’Ivoire. They do not identify subjects as the founder, imply current Liberia stock or facilities, or prove ownership, volume, certification or legal export readiness. Original source-folder locations are deliberately omitted.
 
@@ -33,3 +33,5 @@ No child appears in any of them. Each has 480/800/1280px WebP and a 1280px JPEG;
 ## Lighter photos, no captions (2026-11-24)
 
 At Valentin's request: every photo re-encoded to a size budget (WebP about 15 KB at 480px, 35 KB at 800px, 70 KB at 1280px, JPEG fallback 800px under 60 KB; tests/images.test.mjs enforces a ceiling), `sizes` tightened so desktops load the 800px file, and all photo captions removed (alt text stays). The About page shows field-founder-warehouse in place of the cocoa pod.
+
+Web copies live in `public/images/v2/` (moved 2026-11-24 so Cloudflare and browsers, which cache /images/ for 30 days, fetch the lighter files). When photos are replaced under the same name again, move them to a new folder (v3) the same way.
