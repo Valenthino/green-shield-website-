@@ -7,7 +7,6 @@ export type GalleryPhoto = {
   width: number;
   height: number;
   alt: string;
-  caption: string;
 };
 
 type GalleryCopy = {
@@ -50,9 +49,9 @@ export const gallery: Record<"en" | "fr", GalleryCopy> = {
         title: "Bagged, sewn and stored.",
         text: "Cocoa beans in jute sacks, sewn shut and stacked off the ground.",
         photos: [
-          { ...P("field-sacks-sewn", true), alt: "Rows of jute sacks of cocoa beans with blue stripes in a warehouse, a bag-sewing machine resting on top.", caption: "Sacks sewn shut and ready · Monrovia" },
-          { ...P("field-open-sack", true), alt: "An open jute sack full of dried brown cocoa beans.", caption: "Dried cocoa beans in a jute sack · Monrovia" },
-          { ...P("field-founder-warehouse", true), alt: "Valentin standing in front of a tall stack of cocoa sacks inside a warehouse.", caption: "Valentin at the warehouse · November 2026" },
+          { ...P("field-sacks-sewn", true), alt: "Rows of jute sacks of cocoa beans with blue stripes in a warehouse, a bag-sewing machine resting on top." },
+          { ...P("field-open-sack", true), alt: "An open jute sack full of dried brown cocoa beans." },
+          { ...P("field-founder-warehouse", true), alt: "Valentin standing in front of a tall stack of cocoa sacks inside a warehouse." },
         ],
       },
       {
@@ -60,9 +59,9 @@ export const gallery: Record<"en" | "fr", GalleryCopy> = {
         title: "Quality starts with a handful.",
         text: "We look at the beans by hand: size, colour, dryness and foreign matter.",
         photos: [
-          { ...P("field-beans-hand", false), alt: "A hand holding dried cocoa beans over an open jute sack.", caption: "Checking a handful of beans · Monrovia" },
-          { ...P("field-beans-check", true), alt: "A hand picking up cocoa beans from a large drying and sorting bed.", caption: "Beans on the drying and sorting bed · Monrovia" },
-          { ...P("field-drying-bed", true), alt: "A wide bed of dried cocoa beans in a warehouse, with sacks along the wall.", caption: "Beans spread out before bagging · Monrovia" },
+          { ...P("field-beans-hand", false), alt: "A hand holding dried cocoa beans over an open jute sack." },
+          { ...P("field-beans-check", true), alt: "A hand picking up cocoa beans from a large drying and sorting bed." },
+          { ...P("field-drying-bed", true), alt: "A wide bed of dried cocoa beans in a warehouse, with sacks along the wall." },
         ],
       },
       {
@@ -70,9 +69,9 @@ export const gallery: Record<"en" | "fr", GalleryCopy> = {
         title: "A clean, lined container.",
         text: "The container is lined with kraft paper and a liner against moisture before the sacks go in.",
         photos: [
-          { ...P("field-container-loading", true), alt: "Inside a shipping container lined with kraft paper, sacks of cocoa stacked at the far end.", caption: "Container lined with kraft paper, loading under way · Monrovia" },
-          { ...P("field-container-liner", true), alt: "A plastic liner hung inside a container door before loading.", caption: "Liner fitted against moisture · Monrovia" },
-          { ...P("field-founder-container", true), alt: "Valentin inside a container, with stacked cocoa sacks behind him.", caption: "Valentin at the container loading · November 2026" },
+          { ...P("field-container-loading", true), alt: "Inside a shipping container lined with kraft paper, sacks of cocoa stacked at the far end." },
+          { ...P("field-container-liner", true), alt: "A plastic liner hung inside a container door before loading." },
+          { ...P("field-founder-container", true), alt: "Valentin inside a container, with stacked cocoa sacks behind him." },
         ],
       },
     ],
@@ -102,9 +101,9 @@ export const gallery: Record<"en" | "fr", GalleryCopy> = {
         title: "Ensaché, cousu, stocké.",
         text: "Des fèves de cacao en sacs de jute, cousus et empilés au-dessus du sol.",
         photos: [
-          { ...P("field-sacks-sewn", true), alt: "Rangées de sacs de jute à rayures bleues remplis de fèves de cacao dans un entrepôt, une machine à coudre les sacs posée dessus.", caption: "Sacs cousus et prêts · Monrovia" },
-          { ...P("field-open-sack", true), alt: "Un sac de jute ouvert rempli de fèves de cacao brunes et sèches.", caption: "Fèves de cacao séchées en sac de jute · Monrovia" },
-          { ...P("field-founder-warehouse", true), alt: "Valentin devant une haute pile de sacs de cacao dans un entrepôt.", caption: "Valentin à l’entrepôt · novembre 2026" },
+          { ...P("field-sacks-sewn", true), alt: "Rangées de sacs de jute à rayures bleues remplis de fèves de cacao dans un entrepôt, une machine à coudre les sacs posée dessus." },
+          { ...P("field-open-sack", true), alt: "Un sac de jute ouvert rempli de fèves de cacao brunes et sèches." },
+          { ...P("field-founder-warehouse", true), alt: "Valentin devant une haute pile de sacs de cacao dans un entrepôt." },
         ],
       },
       {
@@ -112,9 +111,9 @@ export const gallery: Record<"en" | "fr", GalleryCopy> = {
         title: "La qualité commence\npar une poignée.",
         text: "Nous regardons les fèves à la main : taille, couleur, séchage et corps étrangers.",
         photos: [
-          { ...P("field-beans-hand", false), alt: "Une main tenant des fèves de cacao séchées au-dessus d’un sac de jute ouvert.", caption: "Contrôle d’une poignée de fèves · Monrovia" },
-          { ...P("field-beans-check", true), alt: "Une main prenant des fèves de cacao sur une grande aire de séchage et de tri.", caption: "Fèves sur l’aire de séchage et de tri · Monrovia" },
-          { ...P("field-drying-bed", true), alt: "Une large aire de fèves de cacao séchées dans un entrepôt, des sacs le long du mur.", caption: "Fèves étalées avant l’ensachage · Monrovia" },
+          { ...P("field-beans-hand", false), alt: "Une main tenant des fèves de cacao séchées au-dessus d’un sac de jute ouvert." },
+          { ...P("field-beans-check", true), alt: "Une main prenant des fèves de cacao sur une grande aire de séchage et de tri." },
+          { ...P("field-drying-bed", true), alt: "Une large aire de fèves de cacao séchées dans un entrepôt, des sacs le long du mur." },
         ],
       },
       {
@@ -122,9 +121,9 @@ export const gallery: Record<"en" | "fr", GalleryCopy> = {
         title: "Un conteneur propre\net doublé.",
         text: "Le conteneur est doublé de papier kraft et d’une housse contre l’humidité avant l’entrée des sacs.",
         photos: [
-          { ...P("field-container-loading", true), alt: "Intérieur d’un conteneur doublé de papier kraft, des sacs de cacao empilés au fond.", caption: "Conteneur doublé de kraft, empotage en cours · Monrovia" },
-          { ...P("field-container-liner", true), alt: "Une housse plastique suspendue à l’entrée d’un conteneur avant le chargement.", caption: "Housse posée contre l’humidité · Monrovia" },
-          { ...P("field-founder-container", true), alt: "Valentin dans un conteneur, des sacs de cacao empilés derrière lui.", caption: "Valentin à l’empotage · novembre 2026" },
+          { ...P("field-container-loading", true), alt: "Intérieur d’un conteneur doublé de papier kraft, des sacs de cacao empilés au fond." },
+          { ...P("field-container-liner", true), alt: "Une housse plastique suspendue à l’entrée d’un conteneur avant le chargement." },
+          { ...P("field-founder-container", true), alt: "Valentin dans un conteneur, des sacs de cacao empilés derrière lui." },
         ],
       },
     ],

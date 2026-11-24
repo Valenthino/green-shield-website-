@@ -29,3 +29,7 @@ Nine photographs from a shared album Valentin sent on 24 November 2026 for this 
 - field-founder-container: Valentin inside the container during loading.
 
 No child appears in any of them. Each has 480/800/1280px WebP and a 1280px JPEG; all camera metadata, including GPS position, is removed (tests/images.test.mjs checks it). Not used: four more selfies, two near-duplicates, a blurred shot (finger over the lens) and a stack of empty bags. Originals stay outside the repository.
+
+## Lighter photos, no captions (2026-11-24)
+
+At Valentin's request: every photo re-encoded to a size budget (WebP about 15 KB at 480px, 35 KB at 800px, 70 KB at 1280px, JPEG fallback 800px under 60 KB; tests/images.test.mjs enforces a ceiling), `sizes` tightened so desktops load the 800px file, and all photo captions removed (alt text stays). The About page shows field-founder-warehouse in place of the cocoa pod.
