@@ -2,7 +2,7 @@ import { readFileSync, existsSync, statSync } from 'node:fs';
 import { resolve } from 'node:path';
 import assert from 'node:assert/strict';
 const root=resolve('out');
-const routes=['/','/en/','/fr/',...['en','fr'].flatMap(lang=>['about','products','contact','privacy','terms'].map(page=>`/${lang}/${page}/`))];
+const routes=['/','/en/','/fr/',...['en','fr'].flatMap(lang=>['about','products','gallery','contact','privacy','terms'].map(page=>`/${lang}/${page}/`))];
 for(const route of routes){
  const file=resolve(root,'.'+route,'index.html');
  assert.ok(existsSync(file),`Missing route: ${route}`);
@@ -48,6 +48,15 @@ for(const language of ['en','fr']){
  assert.match(products,language==='fr'?/Les conditions commerciales sont fixées dans le devis/:/Trade terms are agreed in the quotation/);
  assert.match(products,/\bFOB\b/,'Products page states the trade term');
  assert.match(products,/KOR/,'Cashew specs are listed');
+}
+for(const language of ['en','fr']){
+ const page=readFileSync(resolve(root,language,'gallery/index.html'),'utf8');
+ const home=readFileSync(resolve(root,language,'index.html'),'utf8');
+ for(const name of ['field-sacks-sewn','field-beans-hand','field-container-loading','field-founder-container'])assert.match(page,new RegExp(name+'-800.webp'),`Gallery photo missing: ${name}`);
+ assert.match(page,/Monrovia/);
+ assert.match(home,new RegExp(`/${language}/gallery/`),'Home links to the gallery');
+ const main=page.slice(page.indexOf('<main'),page.indexOf('</main>'));
+ assert.doesNotMatch(main,/Sawadogo/,'Gallery content never shows the full name');
 }
 console.log('Scope checks passed: human cocoa hero, three commodities, cashew gallery, FOB terms, specs and shipment locations.');
 

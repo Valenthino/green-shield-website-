@@ -4,7 +4,7 @@ import { SITE_URL } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
-const paths = ["", "about/", "products/", "contact/", "privacy/", "terms/"];
+const paths = ["", "about/", "products/", "gallery/", "contact/", "privacy/", "terms/"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return locales.flatMap((locale) =>
