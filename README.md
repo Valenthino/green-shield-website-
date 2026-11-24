@@ -12,12 +12,14 @@ Do not change the separate CRM repository, app, datastore, or runtime environmen
 
 ## Languages
 `/` defaults to English. Routes:
-- `/en/`, `/en/about/`, `/en/products/`, `/en/contact/`, `/en/privacy/`, `/en/terms/` (the old `/cocoa/` address redirects to `/products/`)
-- `/fr/`, `/fr/about/`, `/fr/products/`, `/fr/contact/`, `/fr/privacy/`, `/fr/terms/`
+- `/en/`, `/en/about/`, `/en/products/`, `/en/gallery/` (Our work), `/en/contact/`, `/en/privacy/`, `/en/terms/` (the old `/cocoa/` address redirects to `/products/`)
+- `/fr/`, `/fr/about/`, `/fr/products/`, `/fr/gallery/` (Notre travail), `/fr/contact/`, `/fr/privacy/`, `/fr/terms/`
 
 The EN/FR switch preserves the current page. Saved preference wins over browser language. With no saved choice, French primary browser language produces a suggestion. Language choice is the only localStorage value.
 
 ## Content and media
+The Our work page (`/gallery/`) and the home page band "See the product before you buy it" use nine photographs Valentin took in Monrovia, Liberia, on 23 November 2026 (shared by him for the site on 24 November 2026), with the list of what a buyer can check. Copy and captions are in `src/content/gallery.ts`; they name the founder as "Valentin" only.
+
 Editorial copy is in `src/content/redesign.ts`; shared business fields, language labels and enquiry templates are in `src/content/site.ts`. The redesign uses the existing five approved historical Côte d’Ivoire photographs. No new personal portrait is published. The founder's base is not a statement of company domicile. Family cocoa trading experience is distinct from BAOORE AgriTrade's age, export history or capacity. Product availability and trade terms are discussed case by case.
 
 Unknown company particulars and email are omitted from the rendered site, not replaced with invented claims. Confirm factual details before adding them. The About page's wide field-media section can display an approved video by setting `business.introductionVideo`; until then it presents a useful photograph and caption without a fake playback control. Only add a founder portrait after publication authorization for the public repository and website.

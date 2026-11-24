@@ -1,6 +1,6 @@
 export const locales = ["en", "fr"] as const;
 export type Locale = (typeof locales)[number];
-export const pages = ["home", "about", "products", "contact", "privacy", "terms"] as const;
+export const pages = ["home", "about", "products", "gallery", "contact", "privacy", "terms"] as const;
 export type Page = (typeof pages)[number];
 export function href(locale: Locale, page: Page = "home") {
   return `/${locale}/${page === "home" ? "" : `${page}/`}`;
@@ -43,6 +43,7 @@ export const copy = {
       home: "Home",
       about: "About",
       products: "Products & sourcing",
+      gallery: "Our work",
       contact: "Contact",
       privacy: "Privacy",
       terms: "Terms of use",
@@ -264,6 +265,7 @@ export const copy = {
       home: "Accueil",
       about: "À propos",
       products: "Produits & approvisionnement",
+      gallery: "Notre travail",
       contact: "Contact",
       privacy: "Confidentialité",
       terms: "Conditions d’utilisation",
