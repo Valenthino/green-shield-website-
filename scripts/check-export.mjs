@@ -73,3 +73,15 @@ for(const route of routes){
  assert.doesNotMatch(visible,/do not show current Liberia stock|ne montrent pas de stock actuel|not BAOORE AgriTrade’s age|Archive photograph|Photo d’archives/,`Self-undermining caption back: ${route}`);
 }
 console.log('Publication checks passed: no visible draft notes/placeholders, no unapproved headshot, public phone links present.');
+for(const route of routes){
+ const html=readFileSync(resolve(root,'.'+route,'index.html'),'utf8');
+ const language=route.startsWith('/fr/')?'fr':'en';
+ assert.doesNotMatch(html,/Valentin Sawadogo/,`Full founder name shown: ${route}`);
+ assert.equal((html.match(/src="\/brand\/baoore-logo.svg"/g)||[]).length,2,`Header and footer logo: ${route}`);
+ assert.match(html,/<link rel="icon" href="\/favicon.ico"/,`Favicon: ${route}`);
+ assert.match(html,/<link rel="apple-touch-icon" href="\/brand\/apple-touch-icon.png"/,`Apple icon: ${route}`);
+ assert.match(html,/<link rel="manifest" href="\/brand\/site.webmanifest"/,`Manifest: ${route}`);
+ assert.ok(html.includes(`<meta property="og:image" content="https://baooreagritrade.com/brand/og-image-${language}.png"/>`),`Share image: ${route}`);
+}
+assert.ok(!existsSync(resolve(root,'icon.svg')),'Old cocoa-pod icon removed');
+console.log('Brand checks passed: logo in header and footer, favicon, app icons, manifest and share image on every route.');

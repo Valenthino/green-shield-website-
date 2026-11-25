@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Website from "@/components/website";
 import { copy, locales, type Locale, type Page } from "@/content/site";
-import { pageAlternates } from "@/lib/seo";
+import { pageAlternates, shareCard } from "@/lib/seo";
 
 const subpages = ["about", "products", "gallery", "contact", "privacy", "terms"] as const;
 export const dynamicParams = false;
@@ -24,6 +24,7 @@ export async function generateMetadata({
     return {};
   return {
     alternates: pageAlternates(`/${locale}/${page}/`),
+    ...shareCard(locale === "fr" ? "fr" : "en"),
     title: {
       absolute: `${copy[locale as Locale].nav[page as Page]} | BAOORE AgriTrade`,
     },

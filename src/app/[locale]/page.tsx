@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Website from "@/components/website";
 import { locales, type Locale } from "@/content/site";
-import { pageAlternates } from "@/lib/seo";
+import { pageAlternates, shareCard } from "@/lib/seo";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -16,6 +16,7 @@ export async function generateMetadata({
   const { locale } = await params;
   return {
     alternates: pageAlternates(`/${locale}/`),
+    ...shareCard(locale === "fr" ? "fr" : "en"),
     title: {
       absolute:
         locale === "fr"
