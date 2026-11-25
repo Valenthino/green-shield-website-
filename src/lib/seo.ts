@@ -15,10 +15,10 @@ export function pageAlternates(path: string): Metadata["alternates"] {
   };
 }
 
-/** Link preview (WhatsApp, LinkedIn, Facebook): the BAOORE logo card in the page's language. */
+/** Link preview (WhatsApp, LinkedIn, Facebook): the BAOORE logo card. */
 export function shareCard(locale: "en" | "fr"): Pick<Metadata, "openGraph" | "twitter"> {
   const image = {
-    url: `/brand/og-image-${locale}.png`,
+    url: "/brand/og-image.png",
     width: 1200,
     height: 630,
     alt: "BAOORE AgriTrade",

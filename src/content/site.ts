@@ -38,7 +38,6 @@ export const copy = {
   en: {
     locale: "English",
     language: "Language",
-    cocoaTrading: "COFFEE · COCOA · CASHEW",
     nav: {
       home: "Home",
       about: "About",
@@ -260,7 +259,6 @@ export const copy = {
   fr: {
     locale: "Français",
     language: "Langue",
-    cocoaTrading: "CAFÉ · CACAO · ANACARDE",
     nav: {
       home: "Accueil",
       about: "À propos",
