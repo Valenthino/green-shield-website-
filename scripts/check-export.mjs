@@ -41,7 +41,8 @@ for(const language of ['en','fr']){
  assert.match(home,/field-visit-480.webp/, 'People-focused hero required');
  const hero=home.slice(home.indexOf('class="hero '),home.indexOf('</section>',home.indexOf('class="hero ')));
  assert.doesNotMatch(hero,/cocoa-pod/, 'Pod-only hero must not return');
- assert.match(home,language==='fr'?/CAFÉ · CACAO · ANACARDE/:/COFFEE · COCOA · CASHEW/);
+ assert.match(home,language==='fr'?/CAFÉ\. CACAO\. ANACARDE\./:/COFFEE\. COCOA\. CASHEW\./);
+ assert.doesNotMatch(home.slice(home.indexOf('<header'),home.indexOf('</header>')),/COFFEE|CAFÉ/,'Logo carries no commodity tagline');
  assert.match(products,/cashew-warehouse-800.webp/);
  assert.match(products,/cashew-yard-800.webp/);
  assert.match(products,/Monrovia/); assert.match(products,/Lomé/);
@@ -81,7 +82,7 @@ for(const route of routes){
  assert.match(html,/<link rel="icon" href="\/favicon.ico"/,`Favicon: ${route}`);
  assert.match(html,/<link rel="apple-touch-icon" href="\/brand\/apple-touch-icon.png"/,`Apple icon: ${route}`);
  assert.match(html,/<link rel="manifest" href="\/brand\/site.webmanifest"/,`Manifest: ${route}`);
- assert.ok(html.includes(`<meta property="og:image" content="https://baooreagritrade.com/brand/og-image-${language}.png"/>`),`Share image: ${route}`);
+ assert.ok(html.includes(`<meta property="og:image" content="https://baooreagritrade.com/brand/og-image.png"/>`),`Share image: ${route}`);
 }
 assert.ok(!existsSync(resolve(root,'icon.svg')),'Old cocoa-pod icon removed');
 console.log('Brand checks passed: logo in header and footer, favicon, app icons, manifest and share image on every route.');
