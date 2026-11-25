@@ -9,7 +9,7 @@ export function href(locale: Locale, page: Page = "home") {
 // Keep unknown commercial facts null. A value here is displayed as a claim.
 export const business = {
   brand: "BAOORE AgriTrade",
-  founder: "Valentin Sawadogo" as string | null,
+  founder: "Valentin S." as string | null,
   email: "contact@baooreagritrade.com" as string | null,
   // Shown as a second address; the contact form delivers enquiries here (FormSubmit).
   personalEmail: "sawadogovalentin53@gmail.com" as string | null,

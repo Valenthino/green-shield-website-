@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { SITE_URL, pageAlternates } from "@/lib/seo";
+import { SITE_URL, pageAlternates, shareCard } from "@/lib/seo";
 import "../globals.css";
 
 export const metadata: Metadata = {
@@ -12,7 +12,15 @@ export const metadata: Metadata = {
     "BAOORE AgriTrade (African Origins. Global Trade.): a coffee, cocoa and cashew trading business introduction. A personal approach to agricultural trade in West Africa.",
   robots: { index: true, follow: true },
   alternates: { ...pageAlternates("/en/"), canonical: "/en/" },
-  icons: { icon: "/icon.svg" },
+  ...shareCard("en"),
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/brand/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/brand/apple-touch-icon.png",
+  },
+  manifest: "/brand/site.webmanifest",
 };
 export const viewport: Viewport = { themeColor: "#2d3b2e" };
 

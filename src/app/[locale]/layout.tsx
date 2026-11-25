@@ -13,7 +13,14 @@ export const metadata: Metadata = {
   description:
     "BAOORE AgriTrade — African Origins. Global Trade. Coffee, cocoa & cashew / café, cacao et anacarde. Agricultural trade in West Africa / Négoce agricole en Afrique de l’Ouest.",
   robots: { index: true, follow: true },
-  icons: { icon: "/icon.svg" },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/brand/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/brand/apple-touch-icon.png",
+  },
+  manifest: "/brand/site.webmanifest",
 };
 export const viewport: Viewport = { themeColor: "#2d3b2e" };
 export default async function LocalizedLayout({
