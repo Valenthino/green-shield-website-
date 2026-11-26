@@ -112,7 +112,7 @@ export const copy = {
     portraitSmall: "REAL PERSON. SIMPLE SETTING.",
     portraitAlt:
       "Placeholder for the founder’s real photograph; no founder portrait has been confirmed.",
-    founderRole: "Founder · BAOORE AgriTrade",
+    founderRole: "International buyer relations · BAOORE AgriTrade",
     toAdd: "TO ADD",
     videoTitle: "In my own words.",
     videoLabel: "OPTIONAL PERSONAL VIDEO",
@@ -334,7 +334,7 @@ export const copy = {
     portraitSmall: "UNE VRAIE PERSONNE. UN CADRE SIMPLE.",
     portraitAlt:
       "Emplacement pour une véritable photographie du fondateur ; aucun portrait n’a encore été confirmé.",
-    founderRole: "Fondateur · BAOORE AgriTrade",
+    founderRole: "Relations acheteurs internationaux · BAOORE AgriTrade",
     toAdd: "À AJOUTER",
     videoTitle: "Avec mes propres mots.",
     videoLabel: "VIDÉO PERSONNELLE FACULTATIVE",
