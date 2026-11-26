@@ -54,9 +54,9 @@ export const trade = {
     ],
     whatsapp: "WhatsApp",
     whatsappChat: "Chat on WhatsApp",
-    founderPhotoAlt: "Valentin at a cocoa yard, with bags of cocoa beans being loaded onto a truck and beans drying behind him.",
-    founderPhotoCaption: "Valentin at a cocoa yard, with beans drying and a truck being loaded.",
     whatsappLabel: "Write to us on WhatsApp",
+    phonesLabel: "Phone",
+    allContacts: "All contact details",
     formLabel: "SEND AN ENQUIRY",
     formTitle: "Tell us what you need.",
     formText:
@@ -162,9 +162,9 @@ export const trade = {
     ],
     whatsapp: "WhatsApp",
     whatsappChat: "Écrire sur WhatsApp",
-    founderPhotoAlt: "Valentin dans une cour de cacao, avec des sacs de fèves chargés sur un camion et des fèves qui sèchent derrière lui.",
-    founderPhotoCaption: "Valentin dans une cour de cacao, fèves au séchage et camion en chargement.",
     whatsappLabel: "Écrivez-nous sur WhatsApp",
+    phonesLabel: "Téléphone",
+    allContacts: "Toutes nos coordonnées",
     formLabel: "ENVOYER UNE DEMANDE",
     formTitle: "Dites-nous ce qu’il vous faut.",
     formText:
